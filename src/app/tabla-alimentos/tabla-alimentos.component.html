@@ -1,0 +1,59 @@
+<div id="printSection" class="container-fluid" style="margin-bottom: 5%;">
+
+  <table class="table table-responsive" id="myTable">
+      <thead style="text-align: center;">
+        <tr>
+          <th scope="col" class="estilo-tabla">Nombre</th>
+          <th scope="col" class="estilo-tabla">CI</th>
+          <th scope="col" class="estilo-tabla">Domicilio</th>
+          <th scope="col" class="estilo-tabla">Zona</th>
+          <th scope="col" class="estilo-tabla">Municipio</th>
+          <th scope="col" class="estilo-tabla">Rubro</th>
+          <th scope="col" class="estilo-tabla">Detalle Actividad</th>
+          <th scope="col" class="estilo-tabla">Licencia Alcaldia</th>
+          <th scope="col" class="estilo-tabla">Senasag</th>
+          <th scope="col" class="estilo-tabla">AFP</th>
+          <th scope="col" class="estilo-tabla">Caja de Salud</th>
+          <th scope="col" class="estilo-tabla">Nit</th>
+          <th scope="col" class="estilo-tabla">Fundaempresa</th>
+          <th scope="col" class="estilo-tabla">Ninguno</th>
+          <th scope="col" class="estilo-tabla">Norma</th>
+          <th scope="col" class="estilo-tabla">Detalle Norma</th>
+          <th scope="col" class="estilo-tabla">Componente 1</th>
+          <th scope="col" class="estilo-tabla">Componente 2</th>
+          <th scope="col" class="estilo-tabla">Componente 3</th>
+          <th scope="col" class="estilo-tabla">Unidades/Año</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alimento of alimentos">
+          <th scope="row" class="estilo-tabla">{{alimento.solicitante}}</th>
+          <td class="estilo-tabla">{{alimento.ci}}</td>
+          <td class="estilo-tabla">{{alimento.direccion}}</td>
+          <td class="estilo-tabla">{{alimento.zona}}</td>
+          <td class="estilo-tabla">{{alimento.municipio}}</td>
+          <td class="estilo-tabla">{{alimento.actividadPrincipal}}</td>
+          <td class="estilo-tabla">{{alimento.descripcionActividad}}</td>
+          <td class="estilo-tabla">{{alimento.licenciAlcaldia}}</td>
+          <td class="estilo-tabla">{{alimento.senasag}}</td>
+          <td class="estilo-tabla">{{alimento.afp}}</td>
+          <td class="estilo-tabla">{{alimento.cajaSalud}}</td>
+          <td class="estilo-tabla">{{alimento.nit}}</td>
+          <td class="estilo-tabla">{{alimento.fundaempresa}}</td>
+          <td class="estilo-tabla">{{alimento.ninguno}}</td>
+          <td class="estilo-tabla">{{alimento.norma}}</td>
+          <td class="estilo-tabla">{{alimento.detalleNorma}}</td>
+          <td class="estilo-tabla">{{alimento.aperturaMercado}}</td>
+          <td class="estilo-tabla">{{alimento.apolloServFinanciero}}</td>
+          <td class="estilo-tabla">{{alimento.capaciAsitenciaTecni}}</td>
+          <td class="estilo-tabla">{{alimento.cantidadProducida}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="button" (click)="print()" value="Imprimir" class="btn-table"/>
+    <a href="#" id="alimento" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>
+   <!-- <button href="#" id="alimento" (click)="fnExcelReport()" class="btn-table">Descargar</button> --> 
+  </div>
+  
+  
+  

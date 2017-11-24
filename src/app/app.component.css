@@ -1,0 +1,16 @@
+
+.header{
+    background-color: #00174c;
+    width: 100%;
+}
+
+.titulo{
+    color: yellow;
+    padding-bottom: 2%;
+}
+
+.logo_header{
+    padding-top: 2%;
+    width: 10%;
+    padding-bottom: 2%;
+}

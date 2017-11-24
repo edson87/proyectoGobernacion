@@ -1,0 +1,42 @@
+
+      
+<section>
+  <h4>{{titulo}}</h4>
+<ul class="list-group" *ngFor="let textil of textiles">
+  <li class="list-group-item list-group-item-primary lista">
+    <div>
+      <div class="row">
+      <div class="col-md-6">
+        <strong>Nombre Solicitante: </strong>{{textil.solicitante}} 
+      </div>
+      <div class="col-md-6">
+        <strong>CI:</strong> {{textil.ci}}
+      </div>
+      </div>
+      <div><strong>Telefono:</strong> {{textil.telefono}}</div>
+      <div><strong>Celular:</strong> {{textil.celular}}</div>
+      <div><strong>Nombre Empresa:</strong> {{textil.nombreEmpresa}}</div>
+      <div><strong>Antiguedad:</strong> {{textil.antiguedad}}</div>
+      <div><strong>Descripcion de la actividad:</strong> {{textil.descripcionActividad}}</div>
+
+      <h5><p><strong><u>Documentacion de acreditacón</u></strong></p></h5>
+      <div class="card-text" *ngIf="textil.licenciaAlcaldia"><strong>Licencia Alcaldia:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="textil.senasag"><strong>Senasag:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="textil.afp"><strong>AFP:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="textil.cajaSalud"><strong>Caja de Salud:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="textil.nit"><strong>Nit:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="textil.senapi"><strong>Senapi:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="textil.ninguno"><strong>Ninguno:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="textil.fundaempresa"><strong>Fundempresa:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="textil.otros"><strong>Otros:</strong> <img class="check" src="{{check}}"></div>
+      <h4><strong><p><u>Normas Bolivianas</u></p></strong></h4>
+      <div class="card-text" *ngIf="textil.norma"><strong>Tiene Norma:</strong> {{textil.norma}}</div>
+      <div class="card-text" *ngIf="textil.detalleNorma"><strong>Tipos de Normas:</strong> {{textil.detalleNorma}}</div>
+      <h4><strong><p><u>Identificación de la demanda</u></p></strong></h4>
+      <p class="card-text" *ngIf="textil.aperturaMercado"><strong>Apertura a mercados:</strong> <img class="check" src="{{check}}"></p>
+      <p class="card-text" *ngIf="textil.apolloServiciosFinancieron"><strong>Apollo financiero:</strong> <img class="check" src="{{check}}"></p>
+      <p class="card-text" *ngIf="textil.capacitacionAsistenciaTecnica"><strong>Capacitación y asistencia técnica:</strong> <img class="check" src="{{check}}"></p>
+    </div>
+  </li>
+</ul>
+</section>

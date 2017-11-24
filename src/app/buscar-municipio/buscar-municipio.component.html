@@ -1,0 +1,95 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/inscripcion']">Inscripcion</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/buscar']">Buscar</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/rubros']">Buscar por Rubro</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" [routerLink]="['/municipio']">Buscar por Municipio</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/tabla']">Actividad por Rubro</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/login']">Salir</a>
+  </li>
+</ul>
+
+<section class="container-fluid" style="margin-bottom: 5%;">
+  <h2>
+    <strong>Buscar por municipio y por rubro</strong>
+  </h2>
+
+  <div class="form-group col-12 col-md-6 col-sm-12">
+    <p><strong>Seleccione el Municipio.</strong></p>
+    <select class="form-control" name="selectMunicipio" id="selectMunicipio" [(ngModel)]="selectMunicipio">
+      <option *ngFor="let selectMunicipio of municipios" [value]="selectMunicipio">{{selectMunicipio}}</option>
+    </select>
+  </div>
+  <div class="form-group col-12 col-md-6 col-sm-12">
+    <p><strong>Seleccione el rubro.</strong></p>
+    <select class="form-control" name="selectRubro" id="selectRubro" [(ngModel)]="selectRubro">
+        <option *ngFor="let selectRubro of rubros" [value]="selectRubro">{{selectRubro}}</option>
+    </select>
+    <button class="btn btn-primary btn-busqueda" (click)="buscarMunicipio(selectMunicipio,selectRubro)">Buscar</button>
+  </div>
+  <div>
+    <p [hidden]="mostrarPublicacion" style="color:red"><strong>Existe {{countMunicipio.count}} UPES en el municipio de {{tipoMunicipio}}</strong></p>
+  </div>
+
+  <table class="table table-responsive" id="myTable">
+    <thead style="text-align: center;">
+      <tr>
+        <th scope="col" class="estilo-tabla">Nombre</th>
+        <th scope="col" class="estilo-tabla">CI</th>
+        <th scope="col" class="estilo-tabla">Domicilio</th>
+        <th scope="col" class="estilo-tabla">Zona</th>
+        <th scope="col" class="estilo-tabla">Municipio</th>
+        <th scope="col" class="estilo-tabla">Rubro</th>
+        <th scope="col" class="estilo-tabla">Detalle Actividad</th>
+        <th scope="col" class="estilo-tabla">Licencia Alcaldia</th>
+        <th scope="col" class="estilo-tabla">Senasag</th>
+        <th scope="col" class="estilo-tabla">AFP</th>
+        <th scope="col" class="estilo-tabla">Caja de Salud</th>
+        <th scope="col" class="estilo-tabla">Nit</th>
+        <th scope="col" class="estilo-tabla">Fundaempresa</th>
+        <th scope="col" class="estilo-tabla">Ninguno</th>
+        <th scope="col" class="estilo-tabla">Norma</th>
+        <th scope="col" class="estilo-tabla">Detalle Norma</th>
+        <th scope="col" class="estilo-tabla">Componente 1</th>
+        <th scope="col" class="estilo-tabla">Componente 2</th>
+        <th scope="col" class="estilo-tabla">Componente 3</th>
+        <th scope="col">Unidades/Año</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of municipio">
+        <th scope="row" class="estilo-tabla">{{item.solicitante}}</th>
+        <td class="estilo-tabla">{{item.ci}}</td>
+        <td class="estilo-tabla">{{item.direccion}}</td>
+        <td class="estilo-tabla">{{item.zona}}</td>
+        <td class="estilo-tabla">{{item.municipio}}</td>
+        <td class="estilo-tabla">{{item.actividadPrincipal}}</td>
+        <td class="estilo-tabla">{{item.descripcionActividad}}</td>
+        <td class="estilo-tabla">{{item.licenciAlcaldia}}</td>
+        <td class="estilo-tabla">{{item.senasag}}</td>
+        <td class="estilo-tabla">{{item.afp}}</td>
+        <td class="estilo-tabla">{{item.cajaSalud}}</td>
+        <td class="estilo-tabla">{{item.nit}}</td>
+        <td class="estilo-tabla">{{item.fundaempresa}}</td>
+        <td class="estilo-tabla">{{item.ninguno}}</td>
+        <td class="estilo-tabla">{{item.norma}}</td>
+        <td class="estilo-tabla">{{item.detalleNorma}}</td>
+        <td class="estilo-tabla">{{item.aperturaMercado}}</td>
+        <td class="estilo-tabla">{{item.apolloServFinanciero}}</td>
+        <td class="estilo-tabla">{{item.capaciAsitenciaTecni}}</td>
+        <td class="estilo-tabla">{{item.cantidadProducida}}</td>
+      </tr>
+    </tbody>  
+  </table>
+  <a href="#" id="test" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>  
+</section>

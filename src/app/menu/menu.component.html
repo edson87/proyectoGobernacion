@@ -1,0 +1,28 @@
+
+<header class="menu-header">
+  <h5>Bienvenido: {{usuario}}</h5>
+</header>
+<!--<div >
+  <ul class="menu">
+    <li><a [routerLink]="['/inscripcion']">Inscribir</a></li>
+    <li><a [routerLink]="['/buscar']">Buscar</a></li>
+  </ul>
+</div>-->
+<table border="1">
+  <tbody>
+    <tr style="border:1px solid">
+      <a [routerLink]="['/inscripcion']" class="link">Inscribir</a>
+    </tr>
+    <tr>
+    <a [routerLink]="['/buscar']" class="link">Buscar</a>
+  </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+

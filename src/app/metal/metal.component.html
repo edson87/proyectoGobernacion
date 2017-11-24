@@ -1,0 +1,41 @@
+      
+<section>
+  <h4>{{titulo}}</h4>
+<ul class="list-group" *ngFor="let metal of metales">
+  <li class="list-group-item list-group-item-primary lista">
+    <div>
+      <div class="row">
+      <div class="col-md-6">
+        <strong>Nombre Solicitante: </strong>{{metal.solicitante}} 
+      </div>
+      <div class="col-md-6">
+        <strong>CI:</strong> {{metal.ci}}
+      </div>
+      </div>
+      <div><strong>Telefono:</strong> {{metal.telefono}}</div>
+      <div><strong>Celular:</strong> {{metal.celular}}</div>
+      <div><strong>Nombre Empresa:</strong> {{metal.nombreEmpresa}}</div>
+      <div><strong>Antiguedad:</strong> {{metal.antiguedad}}</div>
+      <div><strong>Descripcion de la actividad:</strong> {{metal.descripcionActividad}}</div>
+
+      <h5><p><strong><u>Documentacion de acreditacón</u></strong></p></h5>
+      <div class="card-text" *ngIf="metal.licenciaAlcaldia"><strong>Licencia Alcaldia:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="metal.senasag"><strong>Senasag:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="metal.afp"><strong>AFP:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="metal.cajaSalud"><strong>Caja de Salud:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="metal.nit"><strong>Nit:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="metal.senapi"><strong>Senapi:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="metal.ninguno"><strong>Ninguno:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="metal.fundaempresa"><strong>Fundempresa:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="metal.otros"><strong>Otros:</strong> {{metal.otros}}</div>
+      <h4><strong><p><u>Normas Bolivianas</u></p></strong></h4>
+      <div class="card-text" *ngIf="metal.norma"><strong>Tiene Norma:</strong> {{metal.norma}}</div>
+      <div class="card-text" *ngIf="metal.detalleNorma"><strong>Tipos de Normas:</strong> {{metal.detalleNorma}}</div>
+      <h4><strong><p><u>Identificación de la demanda</u></p></strong></h4>
+      <p class="card-text" *ngIf="metal.aperturaMercado"><strong>Apertura a mercados:</strong> <img class="check" src="{{check}}"></p>
+      <p class="card-text" *ngIf="metal.apolloServiciosFinancieron"><strong>Apollo financiero:</strong> <img class="check" src="{{check}}"></p>
+      <p class="card-text" *ngIf="metal.capacitacionAsistenciaTecnica"><strong>Capacitación y asistencia técnica:</strong> <img class="check" src="{{check}}"></p>
+    </div>
+  </li>
+</ul>
+</section>

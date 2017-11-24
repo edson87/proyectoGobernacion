@@ -1,0 +1,594 @@
+<ul class="nav nav-tabs">
+	<li class="nav-item">
+		<a class="nav-link active" [routerLink]="['/inscripcion']">Inscripcion</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" [routerLink]="['/buscar']">Buscar</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" [routerLink]="['/rubros']">Buscar por Rubro</a>
+	<li class="nav-item">
+		<a class="nav-link" [routerLink]="['/municipio']">Buscar por Municipio</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" [routerLink]="['/tabla']">Actividad por Rubro</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" [routerLink]="['/login']">Salir</a>
+	</li>
+</ul>
+
+<section class="container-fluid" id="inscripcion-section">
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModal">Correcto!</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Se guardaron los datos correctamente.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="error" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModal">Error!</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					El codigo ingresado ya existe.!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div>
+
+		<!--	<form (ngSubmit)="onSubmit()" #fichasform="ngForm">
+
+			<h4>I) Datos Generales</h4>
+			<div class="form-group  row ">
+				<div class="col-12 col-md-8 col-sm-12">
+					<label for="FichaCodigo" class="col-form-label">Codigo Solicitante</label>
+					<div class="">
+						<input #codigo="ngModel" id="codigo" type="text" class="form-control" id="FichaCodigo" name="codigo" [(ngModel)]="ficha.codigo"
+						 [required]="true">
+						<div *ngIf="codigo.invalid && (codigo.dirty || codigo.touched)" class="alert alert-danger">Codigo is required </div>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-sm-12">
+					<label for="FichaFecha" class="col-form-label">Fecha de Inscripcion</label>
+					<div class="">
+						<input type="date" class="form-control" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="ficha.fechaInscripcion">
+					</div>
+				</div>
+			</div>
+			<div class="form-group  row ">
+				<div class="col-12 col-md-8 col-sm-12">
+					<label for="FichaSolicitante" class="col-form-label">Solicitante</label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaSolicitante" placeholder="Nombre Completo" [ngModelOptions]="{standalone: true}"
+						 [(ngModel)]="ficha.solicitante">
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-sm-12">
+					<label for="FichaCI" class="col-form-label">Celula De Identidad</label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaCI" placeholder="Ej. 5280036" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.ci">
+					</div>
+				</div>
+			</div>
+			<div class="form-group  row ">
+				<div class="col-12 col-md-5 col-sm-12">
+					<label for="FichaDireccion" class="col-form-label">Dirección (Domicilio Habitual)</label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaDireccion" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.direccion">
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-sm-12">
+					<label for="FichaZona" class="col-form-label">Zona/Distrito</label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaZona" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.zona">
+					</div>
+				</div>
+				<div class="col-12 col-md-3 col-sm-12">
+					<label for="FichaMunicipio" class="col-form-label">Municipio</label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaMunicipio" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.municipio">
+					</div>
+				</div>
+			</div>
+			<div class="form-group  row ">
+				<div class="col-12 col-md-6 col-sm-12">
+					<label for="FichaEmail" class="col-form-label">Email</label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaNoEmpresa" placeholder="ejemplo@hotmail.com" [ngModelOptions]="{standalone: true}"
+						 [(ngModel)]="ficha.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-sm-12">
+					<label for="FichaFax" class="col-form-label">Fax</label>
+					<div class="">
+						<input type="number" class="form-control" id="FichaFax" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.fax">
+					</div>
+				</div>
+			</div>
+			<div class="form-group  row ">
+				<div class="col-12 col-md-3 col-sm-12">
+					<label for="FichaTelefono" class="col-form-label">Telefono Solicitante</label>
+					<div class="">
+						<input type="number" class="form-control" id="FichaTelefono" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.telefono">
+					</div>
+				</div>
+				<div class="col-12 col-md-3 col-sm-12">
+					<label for="FichaCelular" class="col-form-label">Celular Solicitante</label>
+					<div class="">
+						<input type="number" class="form-control" id="FichaCelular" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.celular">
+					</div>
+				</div>
+			</div>
+			<h4>I.I) Datos de la Empresa</h4>
+			<div class="form-group  row ">
+				<div class="col-12 col-md-6 col-sm-12">
+					<label for="FichaNoEmpresa" class="col-form-label">Empresa UNIPERSONAL/ASOC. PRODUCTIVA/OECA/OTRO</label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaNoEmpresa" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.nombreEmpresa">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group  row ">
+				<div class="col-12 col-md-6 col-sm-12">
+					<label for="FichaDirecEmpre" class="col-form-label">Domicilio (Domicilio de la Unidad productiva)</label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaDirecEmpre" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.direccionEmpresa">
+					</div>
+				</div>
+				<div class="col-12 col-md-3 col-sm-12">
+					<label for="FichaZonEmpre" class="col-form-label">Zona/Distrito</label>
+					<div class="">
+						<input type="test" class="form-control" id="FichaZonEmpre" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.zonaEmpresa">
+					</div>
+				</div>
+				<div class="col-12 col-md-3 col-sm-12">
+					<label for="FichaMuniEmpre" class="col-form-label">Municipio</label>
+					<div class="">
+						<input type="test" class="form-control" id="FichaMuniEmpre" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.municipioEmpresa">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group  row ">
+				<div class="col-12 col-md-4 col-sm-12">
+					<label for="FichaActPrinci" class="col-form-label">Actividad Principal</label>
+					<div class="">
+						<select class="form-control" id="actividadPrincipal" required [(ngModel)]="ficha.actividadPrincipal" [ngModelOptions]="{standalone: true}"
+						 name="actividadPrincipal" #actividadPrincipal="ngModel">
+							<option *ngFor="let actividadPrincipal of rubros" [value]="actividadPrincipal">{{actividadPrincipal}}</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-12 col-md-2 col-sm-12">
+					<label for="FichaAntiguedad" class="col-form-label">Antiguedad</label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaAntiguedad" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.antiguedad">
+					</div>
+				</div>
+				<div class="col-12 col-md-2 col-sm-12">
+					<label for="FichaOperarios" class="col-form-label">Nº de operarios</label>
+					<div class="">
+						<input type="number" class="form-control" id="FichaOperarios" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.numOperarios">
+					</div>
+				</div>
+				<div class="col-12 col-md-2 col-sm-12">
+					<label for="FichaVarones" class="col-form-label">Varones</label>
+					<div class="">
+						<input type="number" class="form-control" id="FichaVarones" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.varones">
+					</div>
+				</div>
+				<div class="col-12 col-md-2 col-sm-12">
+					<label for="FichaMujeres" class="col-form-label">Mujeres</label>
+					<div class="">
+						<input type="number" class="form-control" id="FichaMujeres" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.mujeres">
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-12 col-md-6 col-sm-12">
+					<label for="FichaDescripcion" class="col-form-label">Descripcion de la actividad</label>
+					<div>
+						<input type="text" class="form-control" id="FichaDescripcion" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.descripcionActividad">
+					</div>
+				</div>
+			</div>
+			<h4>II) Documentación de la acreditación</h4>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" id="inlineRadio1" name="licenciaAlcaldia" value="true" [(ngModel)]="ficha.licenciaAlcaldia"> LICENCIA ALCALDIA
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="senasag" value="true" [(ngModel)]="ficha.senasag"> SENASAG
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="afp" value="true" [(ngModel)]="ficha.afp"> AFP
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="cajaSalud" value="true" [(ngModel)]="ficha.cajaSalud"> CAJA DE SALUD
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="nit" value="true" [(ngModel)]="ficha.nit"> NIT
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="ninguno" value="true" [(ngModel)]="ficha.ninguno"> NINGUNO
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="fundaempresa" value="true" [(ngModel)]="ficha.fundaempresa"> FUNDEMPRESA
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="senapi" value="true" [(ngModel)]="ficha.senapi"> SENAPI
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-md-6 col-sm-12 align-self-start">
+					<label class="form-form-label">OTRO</label>
+					<input type="text" class="form-control" id="FichaOtro" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.otros">
+				</div>
+			</div>
+			<h4>III) Normas Bolivianas</h4>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						Sigue alguna norma Boliviana?
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="radio" name="norma" value="si" (click)="value(false)" [(ngModel)]="ficha.norma"> Si
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="radio" name="norma" value="no" (click)="value(true)" [(ngModel)]="ficha.norma"> No
+					</label>
+				</div>
+			</div>
+			<div class="row" [hidden]="mostrarOtro">
+				<div class="col-12 col-md-6 col-sm-12">
+					<label class="form-form-label">Cuales</label>
+					<input type="text" class="form-control" id="FichaDetalleNorma" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.detalleNorma">
+				</div>
+			</div>
+			<h4>IV) Identificacion de la demanda</h4>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-12 col-ms-12">
+					<label class="form-form-label">Apertura a Mercados(Ej. Identificar mercados, promocion de productos, otros)</label>
+					<input class="form-form-input" type="checkbox" name="aperturaMercado" value="true" [(ngModel)]="ficha.aperturaMercado">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-12 col-ms-12">
+					<label class="form-form-label">Apoyos a Servicios Financieros(Ej. Mejores condiciones tasa, tiempo, momto, garantia, otros)</label>
+					<input class="form-form-input" type="checkbox" name="apolloServiciosFinancieron" value="true" [(ngModel)]="ficha.apolloServiciosFinancieron">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-12 col-ms-12">
+					<label class="form-form-label">Capacitacion y Asistencia Técnica(Ej. En administración, marketing, control de calidad, certificación sanitaria, otros)</label>
+					<input class="form-form-input" type="checkbox" name="capacitacionAsistenciaTecnica" value="true" [(ngModel)]="ficha.capacitacionAsistenciaTecnica">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-md-12 col-ms-12">
+					<button type="submit" class="btn btn-secondary btn-submit" data-toggle="modal">Guardar</button>
+				</div>
+			</div>
+		</form>-->
+	</div>
+
+
+	<div>
+		<h1>{{titulo}}</h1>
+
+		<form #fichasform="ngForm" (ngSubmit)="onSubmit()">
+			<h4>I) Datos Generales</h4>
+			<div class="row">
+				<div class="form-group col-12 col-md-5 col-sm-12">
+					<label for="codigo" class="col-form-label"><strong>Codigo Solicitante (*)</strong></label>
+					<input #codigo="ngModel" id="codigo" type="text" name="codigo" class="form-control" [(ngModel)]="ficha.codigo" required>
+					<div *ngIf="codigo.invalid && codigo.touched" class="alert alert-danger">
+						El codigo es requerido.
+					</div>
+				</div>
+				<div class="form-group col-12 col-md-5 col-sm-12">
+					<label for="FichaFecha" class="col-form-label"><strong>Fecha Inscripción (*)</strong></label>
+					<input #fechaInscripcion="ngModel" id="fechaInscripcion" type="date" id="FichaFecha" name="fechaInscripcion" class="form-control" 
+							[(ngModel)]="ficha.fechaInscripcion" required>
+					<div *ngIf="fechaInscripcion.invalid && fechaInscripcion.touched" class="alert alert-danger">
+						La fecha de inscripcion es requerida.
+					</div>
+				</div>
+			</div>
+
+			<div class="  row ">
+				<div class=" form-group col-12 col-md-8 col-sm-12">
+					<label for="FichaSolicitante" class="col-form-label"><strong>Nombre Solicitante (*)</strong></label>
+					<input  #solicitante="ngModel" type="text" class="form-control" id="FichaSolicitante" name="FichaSolicitante" placeholder="Nombre Completo" 
+							[(ngModel)]="ficha.solicitante"  required>
+					<div *ngIf="solicitante.invalid && solicitante.touched" class="alert alert-danger">
+						El nombre es requerido.
+					</div>
+				</div>
+				<div class="form-group col-12 col-md-4 col-sm-12">
+					<label for="FichaCI" class="col-form-label"><strong>Celula De Identidad</strong></label>
+					<input type="number" name="FichaCI" class="form-control" id="FichaCI" placeholder="Ej. 5280036" [(ngModel)]="ficha.ci">
+				</div>
+			</div>
+
+			<div class="form-group  row ">
+				<div class="col-12 col-md-5 col-sm-12">
+					<label for="FichaDireccion" class="col-form-label"><strong>Dirección (Domicilio Habitual)</strong></label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaDireccion" name="FichaDireccion" [(ngModel)]="ficha.direccion">
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-sm-12">
+					<label for="FichaZona" class="col-form-label"><strong>Zona/Distrito</strong></label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaZona" name="FichaZona" [(ngModel)]="ficha.zona">
+					</div>
+				</div>
+				<div class="form-group col-12 col-md-3 col-sm-12">
+					<label for="FichaMunicipio" class="col-form-label"><strong>Municipio</strong></label>
+					<select class="form-control" id="FichaMunicipio" [(ngModel)]="ficha.municipio"
+						name="FichaMunicipio" #municipio="ngModel">
+						<option *ngFor="let municipio of municipios" [value]="municipio">{{municipio}}</option>
+					</select>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="form-group col-12 col-md-6 col-sm-12">
+					<label for="FichaEmail" class="col-form-label"><strong>Email</strong></label>
+					<input type="text" class="form-control" name="FichaNoEmpresa" id="FichaNoEmpresa" placeholder="ejemplo@hotmail.com" [(ngModel)]="ficha.email"
+					 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+				</div>
+				<div class="form-group col-12 col-md-2 col-sm-12">
+					<label for="FichaFax" class="col-form-label"><strong>Fax</strong></label>
+					<input type="number" class="form-control" name="FichaFax" id="FichaFax" [(ngModel)]="ficha.fax">
+				</div>
+				<div class="form-group col-12 col-md-2 col-sm-12">
+					<label for="FichaTelefono" class="col-form-label"><strong>Telefono</strong></label>
+					<div class="">
+						<input type="number" class="form-control" name="FichaTelefono" id="FichaTelefono" [(ngModel)]="ficha.telefono">
+					</div>
+				</div>
+				<div class="form-group col-12 col-md-2 col-sm-12">
+					<label for="FichaCelular" class="col-form-label"><strong>Celular</strong></label>
+					<div class="">
+						<input type="number" class="form-control" id="FichaCelular" name="FichaCelular" [(ngModel)]="ficha.celular">
+					</div>
+				</div>
+			</div>
+			<h4><strong>I.I) Datos de la Empresa</strong></h4>
+			<div class=" row ">
+				<div class="form-group col-12 col-md-4 col-sm-12">
+					<label for="FichaNoEmpresa" class="col-form-label"><strong>Empresa</strong></label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaNoEmpresa" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.nombreEmpresa">
+					</div>
+				</div>
+				<div class="form-group col-12 col-md-4 col-sm-12">
+					<label for="FicahaSociedad" class="col-form-label"><strong>Sociedad</strong></label>
+					<select class="form-control" id="FicahaSociedad" (click)="seleccionarSociedad(sociedad)" [(ngModel)]="ficha.sociedad"
+						name="FicahaSociedad" #sociedad="ngModel">
+						<option *ngFor="let sociedad of sociedades"  [value]="sociedad">{{sociedad}}</option>
+					</select>
+				</div>
+				<div class="form-group col-12 col-md-4 col-sm-12" [hidden]="mostrarNombreSociedad">
+					<label for="FichaNomSociedad" class="col-form-label"><strong>Nombre Sociedad</strong></label>
+					<div class="">
+						<input type="text" class="form-control" name="FichaNomSociedad" id="FichaNomSociedad" [(ngModel)]="ficha.nombreSociedad">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-12 col-md-6 col-sm-12">
+					<label for="FichaDirecEmpre" class="col-form-label"><strong>Domicilio (Domicilio de la Unidad productiva)</strong></label>
+					<div class="">
+						<input type="text" class="form-control" name="FichaDirecEmpre" id="FichaDirecEmpre" [(ngModel)]="ficha.direccionEmpresa">
+					</div>
+				</div>
+				<div class="form-group col-12 col-md-3 col-sm-12">
+					<label for="FichaZonEmpre" class="col-form-label"><strong>Zona/Distrito</strong></label>
+					<input type="test" class="form-control" name="FichaZonEmpre" id="FichaZonEmpre" [(ngModel)]="ficha.zonaEmpresa">
+				</div>
+				<div class="form-group col-12 col-md-3 col-sm-12">
+					<label for="FichaMuniEmpre" class="col-form-label"><strong>Municipio</strong></label>
+					<select class="form-control" id="FichaMuniEmpre" [(ngModel)]="ficha.municipioEmpresa"
+						name="FichaMuniEmpre" #municipioEmpresa="ngModel">
+						<option *ngFor="let municipioEmpresa of municipios" [value]="municipioEmpresa">{{municipioEmpresa}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-12 col-md-4 col-sm-12">
+					<label for="FichaActPrinci" class="col-form-label"><strong>Rubro</strong></label>
+					<select class="form-control" id="actividadPrincipal" [(ngModel)]="ficha.actividadPrincipal"
+						name="actividadPrincipal" #actividadPrincipal="ngModel">
+						<option *ngFor="let actividadPrincipal of rubros" [value]="actividadPrincipal">{{actividadPrincipal}}</option>
+					</select>
+				</div>
+				<div class="form-group col-12 col-md-2 col-sm-12">
+					<label for="FichaAntiguedad" class="col-form-label"><strong>Antiguedad</strong></label>
+					<div class="">
+						<input type="text" class="form-control" id="FichaAntiguedad" name="FichaAntiguedad" [(ngModel)]="ficha.antiguedad">
+					</div>
+				</div>
+				<div class="form-group col-12 col-md-2 col-sm-12">
+					<label for="FichaOperarios" class="col-form-label"><strong>Nº de operarios</strong></label>
+					<div class="">
+						<input type="number" class="form-control" id="FichaOperarios" name="FichaOperarios" [(ngModel)]="ficha.numOperarios">
+					</div>
+				</div>
+				<div class="form-group col-12 col-md-2 col-sm-12">
+					<label for="FichaVarones" class="col-form-label"><strong>Varones</strong></label>
+					<div class="">
+						<input type="number" class="form-control" id="FichaVarones" name="FichaVarones" [(ngModel)]="ficha.varones">
+					</div>
+				</div>
+				<div class="form-group col-12 col-md-2 col-sm-12">
+					<label for="FichaMujeres" class="col-form-label"><strong>Mujeres</strong></label>
+					<div class="">
+						<input type="number" class="form-control" id="FichaMujeres" name="FichaMujeres" [(ngModel)]="ficha.mujeres">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-12 col-md-6 col-sm-12">
+					<label for="FichaDescripcion" class="col-form-label"><strong>Descripcion de la actividad</strong></label>
+					<input type="text" class="form-control" name="FichaDescripcion" id="FichaDescripcion" class="form-control"
+						[(ngModel)]="ficha.descripcionActividad">
+				</div>
+				<div class="form-group col-12 col-md-6 col-sm-12">
+					<label for="FichaCantidad" class="col-form-label"><strong>Unidades/Año Producidas</strong></label>
+					<input type="text" class="form-control" name="FichaCantidad"  id="FichaCantidad" class="form-control"
+						[(ngModel)]="ficha.cantidadProducida">
+				</div>
+			</div>
+			<h4><strong>II) Documentación de Formalización</strong></h4>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" id="inlineRadio1" name="licenciaAlcaldia" value="true" [(ngModel)]="ficha.licenciaAlcaldia"><strong> LICENCIA ALCALDIA</strong>
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="senasag" value="true" [(ngModel)]="ficha.senasag"> <strong>SENASAG</strong>
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="afp" value="true" [(ngModel)]="ficha.afp"> <strong>AFP</strong>
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="cajaSalud" value="true" [(ngModel)]="ficha.cajaSalud"> <strong>CAJA DE SALUD</strong>
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="nit" value="true" [(ngModel)]="ficha.nit"><strong> NIT</strong>
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="fundaempresa" value="true" [(ngModel)]="ficha.fundaempresa"><strong> FUNDEMPRESA</strong>
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="senapi" value="true" [(ngModel)]="ficha.senapi"><strong> SENAPI</strong>
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="ninguno" value="true" [(ngModel)]="ficha.ninguno"><strong> NINGUNO</strong>
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-12 col-md-6 col-sm-12 align-self-start">
+					<label class="form-form-label"><strong>OTRO</strong></label>
+					<input type="text" class="form-control" name="FichaOtro" id="FichaOtro" [(ngModel)]="ficha.otros">
+				</div>
+			</div>
+			<h4>II.I) Otras Certificaciones</h4>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<strong>Cuenta con alguna certificación?</strong>
+					</label>
+				</div>
+				<br>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="radio" name="norma" value="si" (click)="value(false)" [(ngModel)]="ficha.norma"><strong>Si</strong>
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="radio" name="norma" value="no" (click)="value(true)" [(ngModel)]="ficha.norma"><strong> No</strong>
+					</label>
+				</div>
+			</div>
+			<div class="row" [hidden]="mostrarOtro">
+				<div class="form-group col-12 col-md-6 col-sm-12">
+					<label class="form-form-label"><strong>Cuales</strong></label>
+					<input type="text" class="form-control" name="FichaDetalleNorma" id="FichaDetalleNorma" [(ngModel)]="ficha.detalleNorma">
+				</div>
+			</div>
+			<h4><strong>III) Identificacion de la demanda (Componentes)</strong></h4>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-12 col-ms-12">
+					<label class="form-form-label"><strong>Apertura a Mercados(Ej. Identificar mercados, Promocion de productos, Otros)</strong></label>
+					<input class="form-form-input" type="checkbox" name="aperturaMercado" value="si" [(ngModel)]="ficha.aperturaMercado">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-12 col-ms-12">
+					<label class="form-form-label"><strong>Apoyos a Servicios Financieros(Ej. Mejores condiciones tasa, Tiempo, Momto, Garantia, Otros)</strong></label>
+					<input class="form-form-input" type="checkbox" name="apolloServiciosFinancieron" value="si" [(ngModel)]="ficha.apolloServiciosFinancieron">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-check form-check-inline col-12 col-md-12 col-ms-12">
+					<label class="form-form-label"><strong>Asistencia Técnica Capacitación (Ej. En administración, marketing, control de calidad, certificación sanitaria, otros)</strong></label>
+					<input class="form-form-input" type="checkbox" name="capacitacionAsistenciaTecnica" value="si" [(ngModel)]="ficha.capacitacionAsistenciaTecnica">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-success btn-submit" [disabled]="fichasform.form.invalid">
+				Guardar
+			</button>
+		</form>
+	</div>
+</section>

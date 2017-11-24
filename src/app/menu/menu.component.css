@@ -1,0 +1,15 @@
+.menu-header{
+    background-color: #00174c;
+    color: white;
+    padding: 0px;
+    margin: 0 auto;
+    margin-top: -7px;
+}
+
+
+a{
+    font-size: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+

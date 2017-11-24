@@ -1,0 +1,55 @@
+<div id="printSection" class="container-fluid" style="margin-bottom: 5%;">
+  <table class="table table-responsive">
+      <thead style="text-align: center;">
+        <tr>
+          <th scope="col" class="estilo-tabla">Nombre</th>
+          <th scope="col" class="estilo-tabla">CI</th>
+          <th scope="col" class="estilo-tabla">Domicilio</th>
+          <th scope="col" class="estilo-tabla">Zona</th>
+          <th scope="col" class="estilo-tabla">Municipio</th>
+          <th scope="col" class="estilo-tabla">Rubro</th>
+          <th scope="col" class="estilo-tabla">Detalle Actividad</th>
+          <th scope="col" class="estilo-tabla">Licencia Alcaldia</th>
+          <th scope="col" class="estilo-tabla">Senasag</th>
+          <th scope="col" class="estilo-tabla">AFP</th>
+          <th scope="col" class="estilo-tabla">Caja de Salud</th>
+          <th scope="col" class="estilo-tabla">Nit</th>
+          <th scope="col" class="estilo-tabla">Fundaempresa</th>
+          <th scope="col" class="estilo-tabla">Ninguno</th>
+          <th scope="col" class="estilo-tabla">Norma</th>
+          <th scope="col" class="estilo-tabla">Detalle Norma</th>
+          <th scope="col" class="estilo-tabla">Componente 1</th>
+          <th scope="col" class="estilo-tabla">Componente 2</th>
+          <th scope="col" class="estilo-tabla">Componente 3</th>
+          <th scope="col">Unidades/Año</th>                  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let madera of maderas">
+          <th scope="row" class="estilo-tabla">{{madera.solicitante}}</th>
+          <td class="estilo-tabla">{{madera.ci}}</td>
+          <td class="estilo-tabla">{{madera.direccion}}</td>
+          <td class="estilo-tabla">{{madera.zona}}</td>
+          <td class="estilo-tabla">{{madera.municipio}}</td>
+          <td class="estilo-tabla">{{madera.actividadPrincipal}}</td>
+          <td class="estilo-tabla">{{madera.descripcionActividad}}</td>
+          <td class="estilo-tabla">{{madera.licenciAlcaldia}}</td>
+          <td class="estilo-tabla">{{madera.senasag}}</td>
+          <td class="estilo-tabla">{{madera.afp}}</td>
+          <td class="estilo-tabla">{{madera.cajaSalud}}</td>
+          <td class="estilo-tabla">{{madera.nit}}</td>
+          <td class="estilo-tabla">{{madera.fundaempresa}}</td>
+          <td class="estilo-tabla">{{madera.ninguno}}</td>
+          <td class="estilo-tabla">{{madera.norma}}</td>
+          <td class="estilo-tabla">{{madera.detalleNorma}}</td>
+          <td class="estilo-tabla">{{madera.aperturaMercado}}</td>
+          <td class="estilo-tabla">{{madera.apolloServFinanciero}}</td>
+          <td class="estilo-tabla">{{madera.capaciAsitenciaTecni}}</td>
+          <td class="estilo-tabla">{{madera.cantidadProducida}}</td>             
+        </tr>
+      </tbody>
+    </table>
+    <input type="button" (click)="print()" value="Imprimir" class="btn-table"/>    
+    <a href="#" id="madera" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>  
+    </div>
+  

@@ -1,0 +1,41 @@
+      
+<section>
+  <h4>{{titulo}}</h4>
+<ul class="list-group" *ngFor="let alimento of alimentos">
+  <li class="list-group-item list-group-item-primary lista">
+    <div>
+      <div class="row">
+      <div class="col-md-6">
+        <strong>Nombre Solicitante: </strong>{{alimento.solicitante}} 
+      </div>
+      <div class="col-md-6">
+        <strong>CI:</strong> {{alimento.ci}}
+      </div>
+      </div>
+      <div><strong>Telefono:</strong> {{alimento.telefono}}</div>
+      <div><strong>Celular:</strong> {{alimento.celular}}</div>
+      <div><strong>Nombre Empresa:</strong> {{alimento.nombreEmpresa}}</div>
+      <div><strong>Antiguedad:</strong> {{alimento.antiguedad}}</div>
+      <div><strong>Descripcion de la actividad:</strong> {{alimento.descripcionActividad}}</div>
+
+      <h5><p><strong><u>Documentacion de acreditacón</u></strong></p></h5>
+      <div class="card-text" *ngIf="alimento.licenciaAlcaldia"><strong>Licencia Alcaldia:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="alimento.senasag"><strong>Senasag:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="alimento.afp"><strong>Afp:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="alimento.cajaSalud"><strong>Caja de Salud:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="alimento.nit"><strong>Nit:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="alimento.senapi"><strong>Senapi:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="alimento.ninguno"><strong>Ninguno:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="alimento.fundaempresa"><strong>Fundempresa:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="alimento.otros"><strong>Otros:</strong> {{alimento.otros}}</div>
+      <h4><strong><p><u>Normas Bolivianas</u></p></strong></h4>
+      <div class="card-text" *ngIf="alimento.norma"><strong>Tiene Norma:</strong> {{alimento.norma}}</div>
+      <div class="card-text" *ngIf="alimento.detalleNorma"><strong>Tipos de Normas:</strong> {{alimento.detalleNorma}}</div>
+      <h4><strong><p><u>Identificación de la demanda</u></p></strong></h4>
+      <p class="card-text" *ngIf="alimento.aperturaMercado"><strong>Apertura a mercados:</strong> <img class="check" src="{{check}}"></p>
+      <p class="card-text" *ngIf="alimento.apolloServiciosFinancieron"><strong>Apollo financiero:</strong> <img class="check" src="{{check}}"></p>
+      <p class="card-text" *ngIf="alimento.capacitacionAsistenciaTecnica"><strong>Capacitación y asistencia técnica:</strong> <img class="check" src="{{check}}"></p>
+    </div>
+  </li>
+</ul>
+</section>

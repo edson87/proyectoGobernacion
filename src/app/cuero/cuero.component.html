@@ -1,0 +1,40 @@
+<section>
+  <h4>{{titulo}}</h4>
+<ul class="list-group" *ngFor="let cuero of cueros">
+  <li class="list-group-item list-group-item-primary lista">
+    <div>
+      <div class="row">
+      <div class="col-md-6">
+        <strong>Nombre Solicitante: </strong>{{cuero.solicitante}} 
+      </div>
+      <div class="col-md-6">
+        <strong>CI:</strong> {{cuero.ci}}
+      </div>
+      </div>
+      <div><strong>Telefono:</strong> {{cuero.telefono}}</div>
+      <div><strong>Celular:</strong> {{cuero.celular}}</div>
+      <div><strong>Nombre Empresa:</strong> {{cuero.nombreEmpresa}}</div>
+      <div><strong>Antiguedad:</strong> {{cuero.antiguedad}}</div>
+      <div><strong>Descripcion de la actividad:</strong> {{cuero.descripcionActividad}}</div>
+
+      <h5><p><strong><u>Documentacion de acreditacón</u></strong></p></h5>
+      <div class="card-text" *ngIf="cuero.licenciaAlcaldia"><strong>Licencia Alcaldia:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="cuero.senasag"><strong>Senasag:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="cuero.afp"><strong>AFP:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="cuero.cajaSalud"><strong>Caja de Salud:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="cuero.nit"><strong>Nit:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="cuero.senapi"><strong>Senapi:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="cuero.ninguno"><strong>Ninguno:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="cuero.fundaempresa"><strong>Fundempresa:</strong> <img class="check" src="{{check}}"></div>
+      <div class="card-text" *ngIf="cuero.otros"><strong>Otros:</strong> {{cuero.otros}}</div>
+      <h4><strong><p><u>Normas Bolivianas</u></p></strong></h4>
+      <div class="card-text" *ngIf="cuero.norma"><strong>Tiene Norma:</strong> {{cuero.norma}}</div>
+      <div class="card-text" *ngIf="cuero.detalleNorma"><strong>Tipos de Normas:</strong> {{cuero.detalleNorma}}</div>
+      <h4><strong><p><u>Identificación de la demanda</u></p></strong></h4>
+      <p class="card-text" *ngIf="cuero.aperturaMercado"><strong>Apertura a mercados:</strong> <img class="check" src="{{check}}"></p>
+      <p class="card-text" *ngIf="cuero.apolloServiciosFinancieron"><strong>Apollo financiero:</strong> <img class="check" src="{{check}}"></p>
+      <p class="card-text" *ngIf="cuero.capacitacionAsistenciaTecnica"><strong>Capacitación y asistencia técnica:</strong> <img class="check" src="{{check}}"></p>
+    </div>
+  </li>
+</ul>
+</section>

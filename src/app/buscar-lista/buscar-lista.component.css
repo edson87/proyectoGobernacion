@@ -1,0 +1,32 @@
+.input-buscar{
+ width: 30%;
+}
+
+.btn-busqueda{
+    margin-top: 1%;
+    cursor: pointer; 
+}
+
+.check{
+    width: 4%;
+    margin-left: 1%;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+    text-decoration: none;
+    list-style: none;
+}
+
+.ci{
+    text-align: right;
+}
+
+.codigo{
+    float: left;
+}
+.btn-size{
+    width: 20%;
+    margin-right: 2%;
+}

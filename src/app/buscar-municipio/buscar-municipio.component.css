@@ -1,0 +1,25 @@
+.opcionMunicipio{
+    color: blue;
+}
+
+h2{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.btn-busqueda{
+    margin-top: 2%;
+    cursor: pointer; 
+}
+
+.btn-descarga {
+    color: #fff;
+    background-color: #00174c ;
+	border-color: #00174c;
+	cursor: pointer; 
+	text-decoration: none;
+	padding-bottom: 5px;
+    padding-top: 3.5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
