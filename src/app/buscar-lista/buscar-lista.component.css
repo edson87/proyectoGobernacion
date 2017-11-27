@@ -30,3 +30,10 @@
     width: 20%;
     margin-right: 2%;
 }
+
+ul li{
+    list-style: none;
+}
+.select{
+    cursor: pointer;
+}

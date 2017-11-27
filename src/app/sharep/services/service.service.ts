@@ -33,8 +33,12 @@ export class ServiceService {
     //return this.http.post('https://api-proyecto.herokuapp.com/insertForm',ficha);
   }
 
-  public searchByCode(id:string){
-    return this.http.get(`http://localhost:3000/searchByCode/${id}`);
+  public searchAllNames(){
+    return this.http.get(`http://localhost:3000/searchAllNames`);
+  }
+
+  public searchByNames(id:any){
+    return this.http.get(`http://localhost:3000/searchByName/${id}`);
   }
 
   public searchByCI(id:string){

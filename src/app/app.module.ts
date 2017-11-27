@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../app/login/login.component';
@@ -18,6 +17,7 @@ import { MetalComponent } from './metal/metal.component';
 import { TablaModule } from './tabla/tabla.module';
 import { EditarListaComponent } from './editar-lista/editar-lista.component';
 import { NgDatepickerModule } from 'ng2-datepicker';
+import { ComponentesModule } from './componentes/componentes.module';
 
 
 @NgModule({
@@ -39,7 +39,8 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     HttpClientModule,
     RubrosModule,
     TablaModule,
-    NgDatepickerModule
+    NgDatepickerModule,
+    ComponentesModule,
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]
