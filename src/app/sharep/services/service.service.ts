@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Login } from '../../../model/login';
 import { Ficha } from '../../../model/ficha';
+import { Componente } from '../../../model/componente';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { Headers, RequestOptions } from '@angular/http';
@@ -11,6 +12,7 @@ export class ServiceService {
 
   public login: Login[];
   public ficha: Ficha[];
+  public componente: Componente[];
   public urlInsert = "http://localhost:3000/insertarInscripciones";
 
   constructor(private http:HttpClient) { }
@@ -75,5 +77,18 @@ export class ServiceService {
 
   public updateRecord(ficha:Ficha): Observable<any>{
     return this.http.put(`http://localhost:3000/actualizarInscripcion`,ficha);
+  }
+
+  //Endpoint Componentes
+  public insertComponents(componente: Componente): Observable<any>{
+    return this.http.post("http://localhost:3000/ingresarComponente",componente);
+  }
+
+  public showComponent1(){
+    return this.http.get(`http://localhost:3000/showComponenteUno`)
+  }
+
+  public showOnlyOneComponent(id:any):Observable<any>{
+    return this.http.get(`http://localhost:3000/mostrarUnComponente/${id}`);
   }
 }

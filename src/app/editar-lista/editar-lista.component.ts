@@ -35,8 +35,8 @@ export class EditarListaComponent implements OnInit {
 
       this.service.searchByItem(this.listaId)
       .subscribe((result) => {
-        console.log(result)
-        console.log(result[0]['fechaInscripcion']);
+        //console.log(result)
+        //console.log(result[0]['fechaInscripcion']);
         this.ficha = result[0];   
       })
     })

@@ -1,0 +1,39 @@
+<div id="printSection" class="container-fluid" style="margin-bottom: 5%;">
+  <h2><strong>Acceso a Mercados y Comercialización</strong></h2>
+  <table class="table table-responsive" id="myTable">
+    <thead style="text-align: center;">
+      <tr>
+        <th scope="col" class="estilo-tabla">Codigo</th>          
+        <th scope="col" class="estilo-tabla">Nombre</th>
+        <th scope="col" class="estilo-tabla">Rubro</th>
+        <th scope="col" class="estilo-tabla">Ferias Productivas</th>
+        <th scope="col" class="estilo-tabla">Finalisación</th>
+        <th scope="col" class="estilo-tabla">Generacion de realciones comerciales</th>
+        <th scope="col" class="estilo-tabla">Finalisación</th>
+        <th scope="col" class="estilo-tabla">Promoción de ventas mediante espacios virtuales</th>
+        <th scope="col" class="estilo-tabla">Finalisación</th>
+        <th scope="col" class="estilo-tabla">Municipio</th>
+        <th scope="col" class="estilo-tabla">Nombre de la Empresa</th>
+        <th scope="col" class="estilo-tabla">Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let componente of componentes">
+        <th scope="row" class="estilo-tabla">{{componente.codigo}}</th>          
+        <th class="estilo-tabla">{{componente.solicitante}}</th>
+        <th class="estilo-tabla">{{componente.actividadPrincipal}}</th>
+        <td class="estilo-tabla">{{componente.ferias}}</td>
+        <td class="estilo-tabla">{{componente.finFeriaFecha | date:'M/d/yy'}}</td>
+        <td class="estilo-tabla">{{componente.relacionesComerciales	}}</td>
+        <td class="estilo-tabla">{{componente.finRelaComerFecha | date:'M/d/yy'	}}</td>
+        <td class="estilo-tabla">{{componente.promoVentasProdu	}}</td>
+        <td class="estilo-tabla">{{componente.finPromoVentasFecha | date:'M/d/yy'	}}</td>
+        <td class="estilo-tabla">{{componente.municipio}}</td>
+        <td class="estilo-tabla">{{componente.nombreEmpresa}}</td>
+        <td class="estilo-tabla"><button (click)="editar(componente.id)">editar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <!--<input type="button" (click)="print()" value="Imprimir" class="btn-table" />-->
+  <a href="#" id="componente" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>
+</div>

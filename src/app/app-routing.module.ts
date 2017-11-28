@@ -19,6 +19,9 @@ import { TablaAlimentosComponent } from '../app/tabla-alimentos/tabla-alimentos.
 import { TablaMetalComponent } from '../app/tabla-metal/tabla-metal.component';
 import { BuscarMunicipioComponent } from '../app/buscar-municipio/buscar-municipio.component';
 import { EditarListaComponent } from '../app/editar-lista/editar-lista.component';
+import { ComponentesListaComponent } from '../app/componentes-lista/componentes-lista.component';
+import { Componente1Component } from '../app/componente1/componente1.component';
+import { Componente1EditarComponent } from '../app/componente1-editar/componente1-editar.component'
 
 const routes: Routes = [
   {path:'', redirectTo: '/login', pathMatch:'full'},
@@ -28,6 +31,13 @@ const routes: Routes = [
   {path:'buscar', component:BuscarListaComponent},
   {path:'municipio', component:BuscarMunicipioComponent},
   {path:'buscar/editar/:id', component:EditarListaComponent},
+  {path:'componentes/componente1-editar/:id', component:Componente1EditarComponent},
+  {path:'componentes', component:ComponentesListaComponent,
+    children:[
+      {path:'', redirectTo: 'componente1', pathMatch:'full'},
+      {path:'componente1', component:Componente1Component}
+    ]
+  },
   {path:'rubros', component:RubroListaComponent,
     children:[
        {path:'', redirectTo: 'textil', pathMatch:'full'},

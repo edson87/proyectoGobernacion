@@ -1,0 +1,20 @@
+export class Componente{
+    codigo?:string;
+    solicitante?:string;
+    actividadPrincipal?:string;
+    componente1?:string;
+    ferias?:string;
+    finFeriaFecha?:Date;
+    relacionesComerciales?:string;
+    finRelaComerFecha?:Date;
+    promoVentasProdu?:string;
+    finPromoVentasFecha?:Date;
+    componente2?:string;
+    estadoComponente2?:string;
+    fechaComponente2?:Date;
+    componente3?:string;
+    estadoComponente3?:string;
+    fechaComponente3?:Date;
+    nombreEmpresa?:string;
+    municipio?:string;
+}

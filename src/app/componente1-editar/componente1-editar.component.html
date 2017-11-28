@@ -1,0 +1,48 @@
+
+<section class="container-fluid" id="inscripcion-section">
+  <div>
+    <h3>Editar {{componente.solicitante}} de la empresa {{componente.nombreEmpresa}}</h3>
+    <form>
+      <div class="row">
+        <div class="form-group col-12 col-md-6 col-sm-12">
+          <label for="compoFeria" class="col-form-label"><strong>Ferias Realizadas</strong></label>
+         <input #ferias="ngModel" id="compoFeria" type="text" name="compoFeria" class="form-control" [(ngModel)]="componente.ferias" >
+        </div>
+        <div class="form-group col-12 col-md-6 col-sm-12">
+          <label for="compoFeria" class="col-form-label"><strong>Fecha Realizada</strong></label>
+          <div class="datepicker-container">
+            <ng-datepicker #fechaInscripcion="ngModel" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="componente.finFeriaFecha"  [options]="options"></ng-datepicker>
+          </div> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12 col-md-6 col-sm-12">
+          <label for="relacionesComer" class="col-form-label"><strong>Generacion de relaciones comerciales</strong></label>
+          <input #ferias="ngModel" id="relacionesComer" type="text" name="relacionesComer" class="form-control" [(ngModel)]="componente.relacionesComerciales" >
+        </div>
+        <div class="form-group col-12 col-md-6 col-sm-12">
+          <label for="finRelaCompo" class="col-form-label"><strong>Fecha Realizada</strong></label>
+          <div class="datepicker-container">
+            <ng-datepicker #fechaInscripcion="ngModel" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="componente.finRelaComerFecha"  [options]="options"></ng-datepicker>
+          </div> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12 col-md-6 col-sm-12">
+          <label for="ventasEspaciosVirtu" class="col-form-label"><strong>Promoción de ventas mediante espacios virtuales</strong></label>
+          <input #ferias="ngModel" id="ventasEspaciosVirtu" type="text" name="ventasEspaciosVirtu" class="form-control" [(ngModel)]="componente.promoVentasProdu" >
+        </div>
+        <div class="form-group col-12 col-md-6 col-sm-12">
+          <label for="finPromoVentas" class="col-form-label"><strong>Fecha Realizada</strong></label>
+          <div class="datepicker-container">
+            <ng-datepicker #fechaInscripcion="ngModel" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="componente.finPromoVentasFecha"  [options]="options"></ng-datepicker>
+          </div> 
+        </div>
+      </div>
+      <button  class="btn btn-success btn-submit" (click)="guardar()">Guardar</button>
+      <button class="btn btn-success btn-submit" (click)="atras()">Atras</button>
+    </form>
+  </div>
+</section>
+
+    
