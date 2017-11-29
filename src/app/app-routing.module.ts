@@ -22,6 +22,10 @@ import { EditarListaComponent } from '../app/editar-lista/editar-lista.component
 import { ComponentesListaComponent } from '../app/componentes-lista/componentes-lista.component';
 import { Componente1Component } from '../app/componente1/componente1.component';
 import { Componente1EditarComponent } from '../app/componente1-editar/componente1-editar.component'
+import { Componente2Component } from './componente2/componente2.component';
+import { Componente2EditarComponent } from './componente2-editar/componente2-editar.component';
+import { Componente3Component } from './componente3/componente3.component';
+
 
 const routes: Routes = [
   {path:'', redirectTo: '/login', pathMatch:'full'},
@@ -32,10 +36,13 @@ const routes: Routes = [
   {path:'municipio', component:BuscarMunicipioComponent},
   {path:'buscar/editar/:id', component:EditarListaComponent},
   {path:'componentes/componente1-editar/:id', component:Componente1EditarComponent},
+  {path:'componentes/componente2-editar/:id', component:Componente2EditarComponent},
   {path:'componentes', component:ComponentesListaComponent,
     children:[
       {path:'', redirectTo: 'componente1', pathMatch:'full'},
-      {path:'componente1', component:Componente1Component}
+      {path:'componente1', component:Componente1Component},
+      {path:'componente2', component:Componente2Component},
+      {path:'componente3', component:Componente3Component}
     ]
   },
   {path:'rubros', component:RubroListaComponent,

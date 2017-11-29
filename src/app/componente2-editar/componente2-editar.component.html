@@ -1,0 +1,88 @@
+<section class="container-fluid" id="inscripcion-section">
+    <div>
+      <h3>Editar {{componente.solicitante}} de la empresa {{componente.nombreEmpresa}}</h3>
+      <form #actualizarform="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <label class="form-group col-12 col-md-6 col-sm-12"><strong>Taller Educativo Financiero</strong></label>
+        </div>
+        <div class="row">
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="	tallerEducativoFinaciero" value="no" [(ngModel)]="componente.tallerEducativoFinaciero"><strong>No se realizo</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="	tallerEducativoFinaciero" value="si" [(ngModel)]="componente.tallerEducativoFinaciero"><strong>Si se realizo</strong>
+            </label>
+          </div>
+          <div class="form-group col-12 col-md-6 col-sm-12">
+            <label for="compoFeria" class="col-form-label"><strong>Fecha Realizada</strong></label>
+            <div class="datepicker-container">
+              <ng-datepicker #fechaInscripcion="ngModel" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="componente.fechaConclucionTaller"  [options]="options"></ng-datepicker>
+            </div> 
+          </div>
+        </div>
+        <div class="row">
+            <label class="form-group col-12 col-md-6 col-sm-12"><strong>Información Creditica</strong></label>
+          </div>
+          <div class="row">
+            <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="	informacionCrediticia" value="no" [(ngModel)]="componente.informacionCrediticia"><strong>No se realizo</strong>
+              </label>
+            </div>
+            <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="	informacionCrediticia" value="si" [(ngModel)]="componente.informacionCrediticia"><strong>Si se realizo</strong>
+              </label>
+            </div>
+            <div class="form-group col-12 col-md-6 col-sm-12">
+              <label for="fechaConclucion" class="col-form-label"><strong>Fecha Realizada</strong></label>
+              <div class="datepicker-container">
+                <ng-datepicker #fechaInscripcion="ngModel" id="fechaConclucion" name="fechaInscripcion" [(ngModel)]="componente.fechaConclucionInforma"  [options]="options"></ng-datepicker>
+              </div> 
+            </div>
+          </div>
+          <div class="row">
+              <label class="form-group col-12 col-md-6 col-sm-12"><strong>Asesoramientos y Seguimiento</strong></label>
+            </div>
+            <div class="row">
+              <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="	asesoramientoSeguimiento" value="no" (click)="cerrar(true)" [(ngModel)]="componente.asesoramientoSeguimiento"><strong>No se realizo</strong>
+                </label>
+              </div>
+              <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="	asesoramientoSeguimiento" value="si" (click)="abrir(false)" [(ngModel)]="componente.asesoramientoSeguimiento"><strong>Si se realizo</strong>
+                </label>
+              </div>
+              <div class="form-group col-12 col-md-6 col-sm-12">
+                <label for="fechaConclucionAsesora" class="col-form-label"><strong>Fecha Realizada</strong></label>
+                <div class="datepicker-container">
+                  <ng-datepicker #fechaConclucionAsesora="ngModel" id="fechaConclucionAsesora" name="fechaConclucionAsesora" [(ngModel)]="componente.fechaConclucionAsesor"  [options]="options"></ng-datepicker>
+                </div> 
+              </div>
+            </div>
+        <div class="row" [hidden]="mostrarAsesoramiento">
+          <div class="form-group col-12 col-md-4 col-sm-12">
+            <label for="monto" class="col-form-label"><strong>Monto</strong></label>
+            <input #monto="ngModel" id="monto" type="number" name="monto" class="form-control" [(ngModel)]="componente.monto" >
+          </div>
+          <div class="form-group col-12 col-md-4 col-sm-12">
+              <label for="entidadFinan" class="col-form-label"><strong>Entidad Financiera</strong></label>
+              <input #entidadFinanciera="ngModel" id="entidadFinan" type="text" name="entidadFinan" class="form-control" [(ngModel)]="componente.entidadFinanciera" >
+            </div>
+          <div class="form-group col-12 col-md-6 col-sm-12">
+            <label for="onbservacione" class="col-form-label"><strong>Observacion</strong></label>
+            <input #observaciones="ngModel" id="onbservacione" type="text" name="onbservacione" class="form-control" [(ngModel)]="componente.observaciones" >
+          </div>      
+        </div>
+        <button  class="btn btn-success btn-submit" type="submit">Guardar</button>
+        <button class="btn btn-primar" (click)="atras()">Atras</button>
+      </form>
+    </div>
+  </section>
+  
+      

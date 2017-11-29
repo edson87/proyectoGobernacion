@@ -7,11 +7,14 @@
         <th scope="col" class="estilo-tabla">Nombre</th>
         <th scope="col" class="estilo-tabla">Rubro</th>
         <th scope="col" class="estilo-tabla">Ferias Productivas</th>
-        <th scope="col" class="estilo-tabla">Finalisación</th>
-        <th scope="col" class="estilo-tabla">Generacion de realciones comerciales</th>
-        <th scope="col" class="estilo-tabla">Finalisación</th>
-        <th scope="col" class="estilo-tabla">Promoción de ventas mediante espacios virtuales</th>
-        <th scope="col" class="estilo-tabla">Finalisación</th>
+        <th scope="col" class="estilo-tabla">Monto</th>
+        <th scope="col" class="estilo-tabla">Venta Consolidada</th>
+        <th scope="col" class="estilo-tabla">Intencion de Venta</th>
+        <th scope="col" class="estilo-tabla">Fecha Realizada</th>
+        <th scope="col" class="estilo-tabla">Relaciones Comerciales</th>
+        <th scope="col" class="estilo-tabla">Fecha Realizada</th>
+        <th scope="col" class="estilo-tabla">Ventas Mediante Espacios Virtuales</th>
+        <th scope="col" class="estilo-tabla">Fecha Realizada</th>
         <th scope="col" class="estilo-tabla">Municipio</th>
         <th scope="col" class="estilo-tabla">Nombre de la Empresa</th>
         <th scope="col" class="estilo-tabla">Editar</th>
@@ -23,6 +26,9 @@
         <th class="estilo-tabla">{{componente.solicitante}}</th>
         <th class="estilo-tabla">{{componente.actividadPrincipal}}</th>
         <td class="estilo-tabla">{{componente.ferias}}</td>
+        <td class="estilo-tabla">{{componente.montoFeria}}</td>
+        <td class="estilo-tabla">{{componente.ventaConsolidada}}</td>
+        <td class="estilo-tabla">{{componente.intencionVenta}}</td>
         <td class="estilo-tabla">{{componente.finFeriaFecha | date:'M/d/yy'}}</td>
         <td class="estilo-tabla">{{componente.relacionesComerciales	}}</td>
         <td class="estilo-tabla">{{componente.finRelaComerFecha | date:'M/d/yy'	}}</td>
@@ -30,7 +36,7 @@
         <td class="estilo-tabla">{{componente.finPromoVentasFecha | date:'M/d/yy'	}}</td>
         <td class="estilo-tabla">{{componente.municipio}}</td>
         <td class="estilo-tabla">{{componente.nombreEmpresa}}</td>
-        <td class="estilo-tabla"><button (click)="editar(componente.id)">editar</button></td>
+        <td class="estilo-tabla"><button class="btn btn-secondary" (click)="editar(componente.id)">editar</button></td>
       </tr>
     </tbody>
   </table>

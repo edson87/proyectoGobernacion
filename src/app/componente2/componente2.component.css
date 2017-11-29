@@ -1,0 +1,28 @@
+.btn-table {
+    color: #fff;
+    background-color: #00174c ;
+	border-color: #00174c;
+	cursor: pointer; 
+}
+
+.btn-table:hover{
+	color: #fff;
+	background-color: #324e89;
+	border-color: #324e89;
+}
+
+.btn-descarga {
+    color: #fff;
+    background-color: #00174c ;
+	border-color: #00174c;
+	cursor: pointer; 
+	text-decoration: none;
+	padding-bottom: 5px;
+    padding-top: 3.5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+h2{
+	margin-top: 2%;
+	margin-bottom: 3%;
+}

@@ -1,48 +1,110 @@
-
 <section class="container-fluid" id="inscripcion-section">
   <div>
     <h3>Editar {{componente.solicitante}} de la empresa {{componente.nombreEmpresa}}</h3>
-    <form>
+    <form #actualizarform="ngForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="form-group col-12 col-md-6 col-sm-12">
-          <label for="compoFeria" class="col-form-label"><strong>Ferias Realizadas</strong></label>
-         <input #ferias="ngModel" id="compoFeria" type="text" name="compoFeria" class="form-control" [(ngModel)]="componente.ferias" >
+          <label for="compoFeria" class="col-form-label">
+            <strong>Ferias Realizadas</strong>
+          </label>
+          <input #ferias="ngModel" id="compoFeria" type="text" name="compoFeria" class="form-control" [(ngModel)]="componente.ferias">
         </div>
         <div class="form-group col-12 col-md-6 col-sm-12">
-          <label for="compoFeria" class="col-form-label"><strong>Fecha Realizada</strong></label>
+          <label for="compoFeria" class="col-form-label">
+            <strong>Fecha Realizada</strong>
+          </label>
           <div class="datepicker-container">
-            <ng-datepicker #fechaInscripcion="ngModel" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="componente.finFeriaFecha"  [options]="options"></ng-datepicker>
-          </div> 
+            <ng-datepicker #fechaInscripcion="ngModel" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="componente.finFeriaFecha"
+              [options]="options"></ng-datepicker>
+          </div>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="FeriaMontoVenta" value="no" (click)="cerrar(true)" [(ngModel)]="componente.feriaMontoVenta"><strong>No se realizo</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="FeriaMontoVenta" value="si" (click)="abrir(false)" [(ngModel)]="componente.feriaMontoVenta"><strong>Si se realizo</strong>
+            </label>
+          </div>
+      </div>
+      <div class="row" [hidden]="mostrarMontos">
+          <div class="form-group col-12 col-md-4 col-sm-12">
+            <label for="monto" class="col-form-label">
+              <strong>Monto</strong>
+            </label>
+            <input #monto="ngModel" id="monto" type="number" name="monto" class="form-control" [(ngModel)]="componente.montoFeria">
+          </div>
+          <div class="form-group col-12 col-md-4 col-sm-12">
+              <label for="ventaConso" class="col-form-label">
+                <strong>Venta Consolidada</strong>
+              </label>
+              <input #ventaConso="ngModel" id="monto" type="number" name="ventaConso" class="form-control" [(ngModel)]="componente.ventaConsolidada">
+            </div>
+            <div class="form-group col-12 col-md-4 col-sm-12">
+                <label for="intenVenta" class="col-form-label">
+                  <strong>Intencion de Venta</strong>
+                </label>
+                <input #intenVenta="ngModel" id="monto" type="number" name="intenVenta" class="form-control" [(ngModel)]="componente.intencionVenta">
+              </div>
+          </div>
+    
+      <!--<div class="row">
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="	asesoramientoSeguimiento" value="no" (click)="cerrar(true)" [(ngModel)]="componente.asesoramientoSeguimiento"><strong>No se realizo</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" name="	asesoramientoSeguimiento" value="si" (click)="abrir(false)" [(ngModel)]="componente.asesoramientoSeguimiento"><strong>Si se realizo</strong>
+            </label>
+          </div>
+          <div class="form-group col-12 col-md-6 col-sm-12">
+            <label for="fechaConclucionAsesora" class="col-form-label"><strong>Fecha Realizada</strong></label>
+            <div class="datepicker-container">
+              <ng-datepicker #fechaConclucionAsesora="ngModel" id="fechaConclucionAsesora" name="fechaConclucionAsesora" [(ngModel)]="componente.fechaConclucionAsesor"  [options]="options"></ng-datepicker>
+            </div> 
+          </div>
+        </div>-->
+
+      <div class="row">
+        <div class="form-group col-12 col-md-6 col-sm-12">
+          <label for="relacionesComer" class="col-form-label">
+            <strong>Generacion de relaciones comerciales</strong>
+          </label>
+          <input #ferias="ngModel" id="relacionesComer" type="text" name="relacionesComer" class="form-control" [(ngModel)]="componente.relacionesComerciales">
+        </div>
+        <div class="form-group col-12 col-md-6 col-sm-12">
+          <label for="finRelaCompo" class="col-form-label">
+            <strong>Fecha Realizada</strong>
+          </label>
+          <div class="datepicker-container">
+            <ng-datepicker #fechaInscripcion="ngModel" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="componente.finRelaComerFecha"
+              [options]="options"></ng-datepicker>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="form-group col-12 col-md-6 col-sm-12">
-          <label for="relacionesComer" class="col-form-label"><strong>Generacion de relaciones comerciales</strong></label>
-          <input #ferias="ngModel" id="relacionesComer" type="text" name="relacionesComer" class="form-control" [(ngModel)]="componente.relacionesComerciales" >
+          <label for="ventasEspaciosVirtu" class="col-form-label">
+            <strong>Promoción de ventas mediante espacios virtuales</strong>
+          </label>
+          <input #ferias="ngModel" id="ventasEspaciosVirtu" type="text" name="ventasEspaciosVirtu" class="form-control" [(ngModel)]="componente.promoVentasProdu">
         </div>
         <div class="form-group col-12 col-md-6 col-sm-12">
-          <label for="finRelaCompo" class="col-form-label"><strong>Fecha Realizada</strong></label>
+          <label for="finPromoVentas" class="col-form-label">
+            <strong>Fecha Realizada</strong>
+          </label>
           <div class="datepicker-container">
-            <ng-datepicker #fechaInscripcion="ngModel" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="componente.finRelaComerFecha"  [options]="options"></ng-datepicker>
-          </div> 
+            <ng-datepicker #fechaInscripcion="ngModel" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="componente.finPromoVentasFecha"
+              [options]="options"></ng-datepicker>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="form-group col-12 col-md-6 col-sm-12">
-          <label for="ventasEspaciosVirtu" class="col-form-label"><strong>Promoción de ventas mediante espacios virtuales</strong></label>
-          <input #ferias="ngModel" id="ventasEspaciosVirtu" type="text" name="ventasEspaciosVirtu" class="form-control" [(ngModel)]="componente.promoVentasProdu" >
-        </div>
-        <div class="form-group col-12 col-md-6 col-sm-12">
-          <label for="finPromoVentas" class="col-form-label"><strong>Fecha Realizada</strong></label>
-          <div class="datepicker-container">
-            <ng-datepicker #fechaInscripcion="ngModel" id="FichaFecha" name="fechaInscripcion" [(ngModel)]="componente.finPromoVentasFecha"  [options]="options"></ng-datepicker>
-          </div> 
-        </div>
-      </div>
-      <button  class="btn btn-success btn-submit" (click)="guardar()">Guardar</button>
-      <button class="btn btn-success btn-submit" (click)="atras()">Atras</button>
+      <button class="btn btn-success btn-submit" type="submit">Guardar</button>
+      <button class="btn btn-primar" (click)="atras()">Atras</button>
     </form>
   </div>
 </section>
-
-    

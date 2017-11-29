@@ -85,10 +85,19 @@ export class ServiceService {
   }
 
   public showComponent1(){
-    return this.http.get(`http://localhost:3000/showComponenteUno`)
+    return this.http.get(`http://localhost:3000/showComponenteUno`);
+  }
+
+  public showComponent2(){
+    return this.http.get(`http://localhost:3000/showComponenteDos`);
   }
 
   public showOnlyOneComponent(id:any):Observable<any>{
     return this.http.get(`http://localhost:3000/mostrarUnComponente/${id}`);
   }
+
+  public updateOneComponent(componente: Componente): Observable<any>{
+    return this.http.put('http://localhost:3000/actualizarUnComponente',componente);
+  }
+
 }

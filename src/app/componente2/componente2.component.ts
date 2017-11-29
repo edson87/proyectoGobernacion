@@ -2,27 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../app/sharep/services/service.service';
 import { Componente } from '../../model/componente';
 import { Router, ActivatedRoute } from '@angular/router';
-
 declare var jQuery:any;
 declare var $:any;
 
 @Component({
-  selector: 'ap-componente1',
-  templateUrl: './componente1.component.html',
-  styleUrls: ['./componente1.component.css']
+  selector: 'ap-componente2',
+  templateUrl: './componente2.component.html',
+  styleUrls: ['./componente2.component.css']
 })
-export class Componente1Component implements OnInit {
+export class Componente2Component implements OnInit {
   private componentes:any = [];
+
 
   constructor(private service: ServiceService, private router:Router) { }
 
   ngOnInit() {
-  
-    this.service.showComponent1()
-      .subscribe((result)=>{
-        this.componentes = result;
-        //console.log(result)
-      })
+    this.service.showComponent2()
+    .subscribe((result)=>{
+      //console.log(result);
+      this.componentes = result;
+    })
   }
 
   fnExcelReport() {
@@ -42,7 +41,8 @@ export class Componente1Component implements OnInit {
     $('#componente').attr('download', 'componente file.xls');
   }
 
-  editar(value:any){
-    this.router.navigate(['componentes','componente1-editar',value]);
+  editar(value){
+    //console.log(value);
+    this.router.navigate(['componentes','componente2-editar',value]);
   }
 }
