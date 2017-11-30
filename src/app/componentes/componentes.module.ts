@@ -9,6 +9,7 @@ import { NgDatepickerModule } from 'ng2-datepicker';
 import { Componente2Component } from '../componente2/componente2.component';
 import { Componente2EditarComponent } from '../componente2-editar/componente2-editar.component';
 import { Componente3Component } from '../componente3/componente3.component';
+import { Componente3EditarComponent } from '../componente3-editar/componente3-editar.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { Componente3Component } from '../componente3/componente3.component';
     FormsModule,
     NgDatepickerModule
   ],
-  declarations: [ComponentesListaComponent, Componente1Component, Componente1EditarComponent, Componente2Component, Componente2EditarComponent, Componente3Component]
+  declarations: [ComponentesListaComponent, Componente1Component, Componente1EditarComponent, Componente2Component, Componente2EditarComponent, Componente3Component, Componente3EditarComponent]
 })
 export class ComponentesModule { }

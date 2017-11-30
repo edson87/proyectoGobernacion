@@ -113,13 +113,34 @@ export class InscripcionComponent implements OnInit {
       entidadFinanciera:"",
       observaciones:"",
       componente3:this.ficha.capacitacionAsistenciaTecnica,
-      estadoComponente3:"proceso",
-      fechaComponente3:this.ficha.fechaInscripcion,
+
+      formacionAcademica:"",
+      cantidadCursosRealizados:0,
+      costos:"no",
+      marketing:"no",
+      administracion:"no",
+      planNegocios:"no",
+      certificados:"no",
+      excel:"no",
+      word:"no",
+      powerPoint:"no",
+      otros:"",
+      SolicitudCursos:"",
+      fechaRealizada:this.ficha.fechaInscripcion,
+
+      licenciaAlcaldia:this.ficha.licenciaAlcaldia,
+      senasag:this.ficha.senasag,
+      afp:this.ficha.afp,
+      cajaSalud:this.ficha.cajaSalud,
+      nit:this.ficha.nit,
+      senapi:this.ficha.senapi,
+      ministerioTrabajo:false,
+
       nombreEmpresa:this.ficha.nombreEmpresa,
       municipio:this.ficha.municipio
 
     }
-    //console.log(this.ficha);
+    console.log(this.ficha);
     //console.log(this.componente)
     /*let codigo = this.ficha['codigo'].toString();
     this._service.searchByCode(codigo)
@@ -147,7 +168,7 @@ export class InscripcionComponent implements OnInit {
     },err =>{
       console.log(err);
     });*/
-   // this.fichasform.reset();
+    this.fichasform.reset();
   }
 
   seleccionarSociedad(value:any){

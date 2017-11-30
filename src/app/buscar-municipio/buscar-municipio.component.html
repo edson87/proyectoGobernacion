@@ -30,12 +30,14 @@
   <div class="form-group col-12 col-md-6 col-sm-12">
     <p><strong>Seleccione el Municipio.</strong></p>
     <select class="form-control" name="selectMunicipio" id="selectMunicipio" [(ngModel)]="selectMunicipio">
+      <option [value]="elegir" selected>Elegir un Municipio ...</option>
       <option *ngFor="let selectMunicipio of municipios" [value]="selectMunicipio">{{selectMunicipio}}</option>
     </select>
   </div>
   <div class="form-group col-12 col-md-6 col-sm-12">
     <p><strong>Seleccione el rubro.</strong></p>
     <select class="form-control" name="selectRubro" id="selectRubro" [(ngModel)]="selectRubro">
+        <option [value]="elegir" selected>Elegir el rubro ...</option>
         <option *ngFor="let selectRubro of rubros" [value]="selectRubro">{{selectRubro}}</option>
     </select>
     <button class="btn btn-primary btn-busqueda" (click)="buscarMunicipio(selectMunicipio,selectRubro)">Buscar</button>
@@ -44,7 +46,7 @@
     <p [hidden]="mostrarPublicacion" style="color:red"><strong>Existe {{countMunicipio.count}} UPES en el municipio de {{tipoMunicipio}}</strong></p>
   </div>
 
-  <table class="table table-responsive" id="myTable">
+  <table class="table table-bordered" id="myTable">
     <thead style="text-align: center;">
       <tr>
         <th scope="col" class="estilo-tabla">Nombre</th>

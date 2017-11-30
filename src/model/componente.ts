@@ -24,8 +24,29 @@ export class Componente{
     entidadFinanciera?:string;
     observaciones?:string;
     componente3?:string;
-    estadoComponente3?:string;
-    fechaComponente3?:Date;
+
+    formacionAcademica?:string;
+    cantidadCursosRealizados?:number;
+    costos?:string;
+    marketing?:string;
+    administracion?:string;
+    planNegocios?:string;
+    certificados?:string;
+    excel?:string;
+    word?:string;
+    powerPoint?:string;
+    otros?:string;
+    SolicitudCursos?:string;
+    fechaRealizada?:Date;
+    
+    licenciaAlcaldia?: boolean;
+    senasag?: boolean;
+    afp?: boolean;
+    cajaSalud?: boolean;
+    nit?: boolean;
+    senapi?:boolean
+    ministerioTrabajo?:boolean
+
     nombreEmpresa?:string;
     municipio?:string;
 }

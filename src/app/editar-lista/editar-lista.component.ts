@@ -60,4 +60,8 @@ export class EditarListaComponent implements OnInit {
     this.editarform.reset();
     this.router.navigate(['buscar']);
   }
+
+  atras(){
+    this.router.navigate(['buscar']);
+  }
 }

@@ -26,17 +26,16 @@
   <div>
     <h1>{{titulo}}</h1>
     <div class="form-group">
-      <label for="buscarCi">Buscar por Ci</label>
+      <label for="buscarCi">Buscar por Celula de Identidad</label>
       <input type="type" class="form-control col-md-4 col-sm-12 input-buscar" id="buscarCi" [ngModelOptions]="{standalone: true}"
-        [(ngModel)]="ci">
-      <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+        [(ngModel)]="ci" placeholder="Escriba el Numero de la Celula de Identidad...">
       <button class="btn btn-primary btn-busqueda" (click)="buscarCi(ci)">Buscar</button>
     </div>
 
     <div class="form-group">
       <label for="nombres">Buscar por Nombre</label>
       <input id="nombres" type="text" class="validate filter-input form-control col-md-4 col-sm-12 input-buscar" [(ngModel)]=query
-        (keyup)=filter()>
+        (keyup)=filter() placeholder="Elegina un nombre...">
       <div class="suggestions input-field col s12" *ngIf="filteredList.length > 0">
         <ul *ngFor="let item of filteredList">
           <li>
@@ -58,7 +57,7 @@
     </div>-->
 
     <div *ngIf="marcaCodigo">
-      <h4>Busqueda por Celula de Identidad:</h4>
+      <h4><strong>Busqueda por Nombre</strong></h4>
 
       <div class="card bg-light mb-3" style="max-width: 40rem;" *ngFor="let codigo of codigoP">
         <div class="">
@@ -161,7 +160,7 @@
 
     </div>
     <div *ngIf="marcaNombre">
-      <h4>Busqueda por nombre:</h4>
+      <h4><strong>Busqueda por Celula de Identidad</strong></h4>
 
       <div class="card bg-light mb-3" style="max-width: 40rem;" *ngFor="let ci of ciP">
         <div class="row">

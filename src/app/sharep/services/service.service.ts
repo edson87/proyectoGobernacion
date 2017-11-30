@@ -92,6 +92,10 @@ export class ServiceService {
     return this.http.get(`http://localhost:3000/showComponenteDos`);
   }
 
+  public showComponent3(){
+    return this.http.get(`http://localhost:3000/showComponenteTres`);
+  }
+
   public showOnlyOneComponent(id:any):Observable<any>{
     return this.http.get(`http://localhost:3000/mostrarUnComponente/${id}`);
   }
@@ -99,5 +103,5 @@ export class ServiceService {
   public updateOneComponent(componente: Componente): Observable<any>{
     return this.http.put('http://localhost:3000/actualizarUnComponente',componente);
   }
-
+  
 }

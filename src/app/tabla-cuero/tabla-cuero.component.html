@@ -1,5 +1,7 @@
 <div id="printSection" class="container-fluid" style="margin-bottom: 5%;">
-  <table class="table table-responsive">
+
+  <div class="scroll">
+  <table class="table table-bordered">
       <thead style="text-align: center;">
         <tr >
           <th scope="col" class="estilo-tabla">Nombre</th>
@@ -49,6 +51,7 @@
         </tr>
       </tbody>
     </table>
+  </div>
     <input type="button" (click)="print()" value="Imprimir" class="btn-table"/>  
     
     <a href="#" id="cuero" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>     

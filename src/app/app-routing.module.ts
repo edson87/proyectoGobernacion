@@ -25,7 +25,7 @@ import { Componente1EditarComponent } from '../app/componente1-editar/componente
 import { Componente2Component } from './componente2/componente2.component';
 import { Componente2EditarComponent } from './componente2-editar/componente2-editar.component';
 import { Componente3Component } from './componente3/componente3.component';
-
+import { Componente3EditarComponent } from './componente3-editar/componente3-editar.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/login', pathMatch:'full'},
@@ -37,6 +37,7 @@ const routes: Routes = [
   {path:'buscar/editar/:id', component:EditarListaComponent},
   {path:'componentes/componente1-editar/:id', component:Componente1EditarComponent},
   {path:'componentes/componente2-editar/:id', component:Componente2EditarComponent},
+  {path:'componentes/componente3-editar/:id', component:Componente3EditarComponent},
   {path:'componentes', component:ComponentesListaComponent,
     children:[
       {path:'', redirectTo: 'componente1', pathMatch:'full'},

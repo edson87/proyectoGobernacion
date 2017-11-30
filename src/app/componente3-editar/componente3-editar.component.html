@@ -1,0 +1,191 @@
+<section class="container-fluid" id="inscripcion-section">
+  <div>
+    <h3>Editar {{componente.solicitante}} de la empresa {{componente.nombreEmpresa}}</h3>
+    <form #actualizarform="ngForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="form-group col-12 col-md-3 col-sm-12">
+          <label for="formAcademica" class="col-form-label">
+            <strong>1. Formacion Academica</strong>
+          </label>
+          <select class="form-control" id="formAcademica" [(ngModel)]="componente.formacionAcademica" name="formAcademica" #formacionAcademica="ngModel">
+            <option *ngFor="let formacionAcademica of formacion" [value]="formacionAcademica">
+              <strong>{{formacionAcademica}}</strong>
+            </option>
+          </select>
+        </div>
+        <div class="form-group col-12 col-md-7 col-sm-12">
+            <label for="fechaRealizada" class="col-form-label"><strong>Fecha de Registro</strong></label>
+            <div class="datepicker-container">
+              <ng-datepicker #fechaRealizada="ngModel" id="	fechaRealizada" name="	fechaRealizada" [(ngModel)]="componente.fechaRealizada"  [options]="options"></ng-datepicker>
+            </div> 
+          </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12 col-md-3 col-sm-12">
+          <label for="cursosRealizados" class="col-form-label">
+            <strong>2. Cantidad de Cursos Realizados</strong>
+          </label>
+          <input type="number" class="form-control" id="cursosRealizados" name="cursosRealizados" [(ngModel)]="componente.cantidadCursosRealizados">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 col-sm-12">
+          <label>
+            <strong>a) GESTION EMPRESARIAL</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="costos" value="no" [(ngModel)]="componente.costos">
+            <strong> Costos</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="marketing" value="no" [(ngModel)]="componente.marketing">
+            <strong> Marketing</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="administracion" value="si" [(ngModel)]="componente.administracion">
+            <strong> Administración</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="planNegocios" value="si" [(ngModel)]="componente.planNegocios">
+            <strong> Plan de Negocios</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 col-sm-12">
+          <label>
+            <strong>b) CERTIFICADOS</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="	certificados" value="no" (click)="cerrar(true)" [(ngModel)]="componente.certificados">
+            <strong>No se realizo</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="	certificados" value="si" (click)="abrir(false)" >
+            <strong>Si se realizo</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row" [hidden]="mostrarOpcion">
+          <div class="form-group col-12 col-md-6 col-sm-12">
+              <label for="compoFeria" class="col-form-label"><strong>Cuales ?</strong></label>
+              <div for="certificados" class="datepicker-container">
+                <input type="text" id="certificados" name="certificados" [(ngModel)]="componente.certificados">
+              </div> 
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 col-sm-12">
+          <label>
+            <strong>c) PROGRAMAS INFORMÁTICOS</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="excel" value="no" (click)="cerrarOtro(true)" [(ngModel)]="componente.excel">
+              <strong> Excel</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="word" value="no" (click)="cerrarOtro(true)" [(ngModel)]="componente.word">
+              <strong> Word</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="powerPoint" value="no" (click)="cerrarOtro(true)" [(ngModel)]="componente.powerPoint">
+              <strong> Power Point</strong>
+            </label>
+          </div>
+          <div class="form-group col-12 col-md-8 col-sm-12">
+              <label for="compoFeria" class="col-form-label"><strong>Otros: </strong></label>         
+              <input type="text" id="otros" name="otros" [(ngModel)]="componente.otros">
+          </div>
+        </div>
+        <div class="row">
+            <div class="form-check form-check-inline col-12 col-md-7 col-ms-12">
+              <label for="compoFeria" class="col-form-label"><strong>Demanda de Cursos y Asistencias Técnicas Requeridas:</strong></label>
+              <input class="form-control" type="text" id="SolicitudCursos" name="SolicitudCursos" [(ngModel)]="componente.SolicitudCursos">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-sm-12">
+          <label><strong>Documentación de Formalización</strong></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" id="inlineRadio1" name="licenciaAlcaldia" value="true" [(ngModel)]="componente.licenciaAlcaldia"><strong> LICENCIA ALCALDIA</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="senasag" value="true" [(ngModel)]="componente.senasag"> <strong>SENASAG</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="afp" value="true" [(ngModel)]="componente.afp"> <strong>AFP</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="cajaSalud" value="true" [(ngModel)]="componente.cajaSalud"> <strong>CAJA DE SALUD</strong>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="nit" value="true" [(ngModel)]="componente.nit"><strong> NIT</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="fundaempresa" value="true" [(ngModel)]="componente.fundaempresa"><strong> FUNDEMPRESA</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="senapi" value="true" [(ngModel)]="componente.senapi"><strong> SENAPI</strong>
+            </label>
+          </div>
+          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="ministerioTrabajo" value="true" [(ngModel)]="componente.ministerioTrabajo"><strong> MINISTERIO DE TRABAJO</strong>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-12 col-md-6 col-sm-12 align-self-start">
+            <label class="form-form-label"><strong>OTRO</strong></label>
+            <input type="text" class="form-control" name="FichaOtro" id="FichaOtro" [(ngModel)]="componente.otros">
+          </div>
+        </div>
+
+      <button class="btn btn-success btn-submit" type="submit">Guardar</button>
+      <button class="btn btn-primar" (click)="atras()">Atras</button>
+    </form>
+  </div>
+</section>

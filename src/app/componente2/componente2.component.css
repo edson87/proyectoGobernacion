@@ -26,3 +26,9 @@ h2{
 	margin-top: 2%;
 	margin-bottom: 3%;
 }
+
+.scroll{
+	overflow:scroll;
+	height:auto;
+	width:auto;
+}

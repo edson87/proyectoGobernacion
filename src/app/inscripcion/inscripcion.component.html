@@ -115,8 +115,8 @@
 				</div>
 				<div class="form-group col-12 col-md-3 col-sm-12">
 					<label for="FichaMunicipio" class="col-form-label"><strong>Municipio</strong></label>
-					<select class="form-control" id="FichaMunicipio" [(ngModel)]="ficha.municipio"
-						name="FichaMunicipio" #municipio="ngModel">
+					<select class="form-control" id="FichaMunicipio" [(ngModel)]="ficha.municipio" name="FichaMunicipio" #municipio="ngModel">
+						<option [value]="elegir" selected>Elegir...</option>
 						<option *ngFor="let municipio of municipios" [value]="municipio">{{municipio}}</option>
 					</select>
 				</div>
@@ -157,6 +157,7 @@
 					<label for="FicahaSociedad" class="col-form-label"><strong>Sociedad</strong></label>
 					<select class="form-control" id="FicahaSociedad" (click)="seleccionarSociedad(sociedad)" [(ngModel)]="ficha.sociedad"
 						name="FicahaSociedad" #sociedad="ngModel">
+						<option [value]="elegir" selected>Elegir...</option>
 						<option *ngFor="let sociedad of sociedades"  [value]="sociedad">{{sociedad}}</option>
 					</select>
 				</div>
@@ -183,6 +184,7 @@
 					<label for="FichaMuniEmpre" class="col-form-label"><strong>Municipio</strong></label>
 					<select class="form-control" id="FichaMuniEmpre" [(ngModel)]="ficha.municipioEmpresa"
 						name="FichaMuniEmpre" #municipioEmpresa="ngModel">
+						<option [value]="elegir" selected>Elegir...</option>
 						<option *ngFor="let municipioEmpresa of municipios" [value]="municipioEmpresa">{{municipioEmpresa}}</option>
 					</select>
 				</div>
@@ -192,6 +194,7 @@
 					<label for="FichaActPrinci" class="col-form-label"><strong>Rubro</strong></label>
 					<select class="form-control" id="actividadPrincipal" [(ngModel)]="ficha.actividadPrincipal"
 						name="actividadPrincipal" #actividadPrincipal="ngModel">
+						<option [value]="elegir" selected>Elegir...</option>
 						<option *ngFor="let actividadPrincipal of rubros" [value]="actividadPrincipal">{{actividadPrincipal}}</option>
 					</select>
 				</div>
@@ -204,7 +207,7 @@
 				<div class="form-group col-12 col-md-2 col-sm-12">
 					<label for="FichaOperarios" class="col-form-label"><strong>Nº de operarios</strong></label>
 					<div class="">
-						<input type="number" class="form-control" id="FichaOperarios" name="FichaOperarios" [(ngModel)]="ficha.numOperarios">
+						<input type="number" id="FichaOperarios" name="FichaOperarios" [(ngModel)]="ficha.numOperarios">
 					</div>
 				</div>
 				<div class="form-group col-12 col-md-2 col-sm-12">
