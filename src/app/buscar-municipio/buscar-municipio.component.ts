@@ -17,6 +17,9 @@ export class BuscarMunicipioComponent implements OnInit {
   public countMunicipio: any = [];
   public tipoMunicipio: any = [];
   public mostrarPublicacion:boolean;
+  public selectMunicipio:any;
+  public selectRubro:any;
+
   constructor(private service: ServiceService) { }
 
   ngOnInit() {
@@ -87,8 +90,9 @@ export class BuscarMunicipioComponent implements OnInit {
     if (municipio != undefined && rubro != undefined) {
       //console.log("muestro por dos queries");
       this.searchByMunicipioAndRubro(municipio,rubro);
-    } else if (municipio != undefined && rubro == undefined) {
+    } else if (municipio != undefined && rubro === undefined) {
       //console.log("muestro solo municipio", municipio)
+     // console.log( rubro)
       this.searchByMunicipio(municipio);
     } else if (municipio == undefined && rubro != undefined) {
       alert("Seleccione un municipio");

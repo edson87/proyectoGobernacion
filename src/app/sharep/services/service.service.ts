@@ -104,4 +104,11 @@ export class ServiceService {
     return this.http.put('http://localhost:3000/actualizarUnComponente',componente);
   }
   
+  public deleteComponetItem(id:any): Observable<any>{
+    return this.http.delete(`http://localhost:3000/deleteComponenteItem/${id}`);
+  }
+
+  public updateRecordEdited(componente:Componente): Observable<any>{
+    return this.http.put(`http://localhost:3000/actualizarInscripcionEditadas`,componente);
+  }
 }

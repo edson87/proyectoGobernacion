@@ -1,58 +1,60 @@
-<div class="container-fluid" id="printSection" style="margin-bottom: 5%;">
+<div class="container-fluid" id="printSection" style="margin-bottom: 5%; margin-top: 2%;">
   <div class="scroll">
-<table class="table table-bordered" >
-    <thead style="text-align: center;">
-      <tr>
-        <th scope="col" class="estilo-tabla">Nombre</th>
-        <th scope="col" class="estilo-tabla">CI</th>
-        <th scope="col" class="estilo-tabla">Domicilio</th>
-        <th scope="col" class="estilo-tabla">Zona</th>
-        <th scope="col" class="estilo-tabla">Municipio</th>
-        <th scope="col" class="estilo-tabla">Rubro</th>
-        <th scope="col" class="estilo-tabla">Detalle Actividad</th>
-        <th scope="col" class="estilo-tabla">Licencia Alcaldia</th>
-        <th scope="col" class="estilo-tabla">Senasag</th>
-        <th scope="col" class="estilo-tabla">AFP</th>
-        <th scope="col" class="estilo-tabla">Caja de Salud</th>
-        <th scope="col" class="estilo-tabla">Nit</th>
-        <th scope="col" class="estilo-tabla">Fundaempresa</th>
-        <th scope="col" class="estilo-tabla">Ninguno</th>
-        <th scope="col" class="estilo-tabla">Norma</th>
-        <th scope="col" class="estilo-tabla">Detalle Norma</th>
-        <th scope="col" class="estilo-tabla">Componente 1</th>
-        <th scope="col" class="estilo-tabla">Componente 2</th>
-        <th scope="col" class="estilo-tabla">Componente 3</th>
-        <th scope="col">Unidades/Año</th>   
-      </tr>
-    </thead>
-    <tbody style="text-align: center;">
-      <tr *ngFor="let textil of textiles" >
-        <th scope="row" class="estilo-tabla">{{textil.solicitante}}</th>
-        <td class="estilo-tabla">{{textil.ci}}</td>
-        <td class="estilo-tabla">{{textil.direccion}}</td>
-        <td class="estilo-tabla">{{textil.zona}}</td>
-        <td class="estilo-tabla">{{textil.municipio}}</td>
-        <td class="estilo-tabla">{{textil.actividadPrincipal}}</td>
-        <td class="estilo-tabla">{{textil.descripcionActividad}}</td>
-        <td class="estilo-tabla">{{textil.licenciAlcaldia}}</td>
-        <td class="estilo-tabla">{{textil.senasag}}</td>
-        <td class="estilo-tabla">{{textil.afp}}</td>
-        <td class="estilo-tabla">{{textil.cajaSalud}}</td>
-        <td class="estilo-tabla">{{textil.nit}}</td>
-        <td class="estilo-tabla">{{textil.fundaempresa}}</td>
-        <td class="estilo-tabla">{{textil.ninguno}}</td>
-        <td class="estilo-tabla">{{textil.norma}}</td>
-        <td class="estilo-tabla">{{textil.detalleNorma}}</td>
+    <table class="table table-bordered">
+      <thead style="text-align: center;">
+        <tr>
+          <th scope="col" class="estilo-tabla estilo-grupo">Nombre</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">CI</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Domicilio</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Zona</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Municipio</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Rubro</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Detalle Actividad</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Licencia Alcaldia</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Senasag</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">AFP</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Caja de Salud</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Nit</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Fundaempresa</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Ninguno</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Norma</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Detalle Norma</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Componente 1</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Componente 2</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Componente 3</th>
+          <th scope="col">Unidades/Año</th>
+        </tr>
+      </thead>
+      <tbody style="text-align: center;">
+        <tr *ngFor="let textil of textiles">
+          <th scope="row" class="estilo-tabla">{{textil.solicitante}}</th>
+          <td class="estilo-tabla">{{textil.ci}}</td>
+          <td class="estilo-tabla">{{textil.direccion}}</td>
+          <td class="estilo-tabla">{{textil.zona}}</td>
+          <td class="estilo-tabla">{{textil.municipio}}</td>
+          <td class="estilo-tabla">{{textil.actividadPrincipal}}</td>
+          <td class="estilo-tabla">{{textil.descripcionActividad}}</td>
+          <td class="estilo-tabla">{{textil.licenciAlcaldia}}</td>
+          <td class="estilo-tabla">{{textil.senasag}}</td>
+          <td class="estilo-tabla">{{textil.afp}}</td>
+          <td class="estilo-tabla">{{textil.cajaSalud}}</td>
+          <td class="estilo-tabla">{{textil.nit}}</td>
+          <td class="estilo-tabla">{{textil.fundaempresa}}</td>
+          <td class="estilo-tabla">{{textil.ninguno}}</td>
+          <td class="estilo-tabla">{{textil.norma}}</td>
+          <td class="estilo-tabla">{{textil.detalleNorma}}</td>
 
-        <td class="estilo-tabla">{{textil.aperturaMercado}}</td>
-        <td class="estilo-tabla">{{textil.apolloServFinanciero}}</td>
-        <td class="estilo-tabla">{{textil.capaciAsitenciaTecni}}</td>
+          <td class="estilo-tabla">{{textil.aperturaMercado}}</td>
+          <td class="estilo-tabla">{{textil.apolloServFinanciero}}</td>
+          <td class="estilo-tabla">{{textil.capaciAsitenciaTecni}}</td>
 
-        <td class="estilo-tabla">{{textil.cantidadProducida}}</td>         
-      </tr>
-    </tbody>
-  </table>
-</div>
-  <input type="button" (click)="print()" value="Imprimir" class="btn-table"/>  
-  <a href="#" id="textil" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>  
+          <td class="estilo-tabla">{{textil.cantidadProducida}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+  <div class="" style="margin-top: 1%;">
+    <input type="button" (click)="print()" value="Imprimir" class="btn-table" />
+    <a href="#" id="textil" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>
+  </div>
+</div>

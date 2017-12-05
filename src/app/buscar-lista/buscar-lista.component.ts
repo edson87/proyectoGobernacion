@@ -156,8 +156,12 @@ selectName(){
   eliminar(value:any){
     this.service.deleteItem(value)
       .subscribe((result) => {
+       this.service.deleteComponetItem(value)
+       .subscribe((result) => {
         window.location.reload();
+       })
       })
+    
   }
 
   goBack(){

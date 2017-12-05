@@ -2,7 +2,7 @@
   <div>
     <h3>Editar {{componente.solicitante}} de la empresa {{componente.nombreEmpresa}}</h3>
     <form #actualizarform="ngForm" (ngSubmit)="onSubmit()">
-      <div class="row">
+      <div class="row" style="margin-top: 2%;">
         <div class="form-group col-12 col-md-3 col-sm-12">
           <label for="formAcademica" class="col-form-label">
             <strong>1. Formacion Academica</strong>
@@ -14,13 +14,16 @@
           </select>
         </div>
         <div class="form-group col-12 col-md-7 col-sm-12">
-            <label for="fechaRealizada" class="col-form-label"><strong>Fecha de Registro</strong></label>
-            <div class="datepicker-container">
-              <ng-datepicker #fechaRealizada="ngModel" id="	fechaRealizada" name="	fechaRealizada" [(ngModel)]="componente.fechaRealizada"  [options]="options"></ng-datepicker>
-            </div> 
+          <label for="fechaRealizada" class="col-form-label">
+            <strong>Fecha de Registro</strong>
+          </label>
+          <div class="datepicker-container">
+            <ng-datepicker #fechaRealizada="ngModel" id="	fechaRealizada" name="	fechaRealizada" [(ngModel)]="componente.fechaRealizada"
+              [options]="options"></ng-datepicker>
           </div>
+        </div>
       </div>
-      <div class="row">
+      <div class="row" style="margin-top: 2%;">
         <div class="form-group col-12 col-md-3 col-sm-12">
           <label for="cursosRealizados" class="col-form-label">
             <strong>2. Cantidad de Cursos Realizados</strong>
@@ -28,7 +31,7 @@
           <input type="number" class="form-control" id="cursosRealizados" name="cursosRealizados" [(ngModel)]="componente.cantidadCursosRealizados">
         </div>
       </div>
-      <div class="row">
+      <div class="row" style="margin-top: 2%;">
         <div class="col-12 col-md-6 col-sm-12">
           <label>
             <strong>a) GESTION EMPRESARIAL</strong>
@@ -61,8 +64,8 @@
           </label>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 col-md-6 col-sm-12">
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-12 col-md-6 col-sm-12" >
           <label>
             <strong>b) CERTIFICADOS</strong>
           </label>
@@ -77,20 +80,22 @@
         </div>
         <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="	certificados" value="si" (click)="abrir(false)" >
+            <input class="form-check-input" type="radio" name="	certificados" value="si" (click)="abrir(false)">
             <strong>Si se realizo</strong>
           </label>
         </div>
       </div>
       <div class="row" [hidden]="mostrarOpcion">
-          <div class="form-group col-12 col-md-6 col-sm-12">
-              <label for="compoFeria" class="col-form-label"><strong>Cuales ?</strong></label>
-              <div for="certificados" class="datepicker-container">
-                <input type="text" id="certificados" name="certificados" [(ngModel)]="componente.certificados">
-              </div> 
+        <div class="form-group col-12 col-md-6 col-sm-12">
+          <label for="compoFeria" class="col-form-label">
+            <strong>Cuales ?</strong>
+          </label>
+          <div for="certificados" class="datepicker-container">
+            <input type="text" id="certificados" name="certificados" [(ngModel)]="componente.certificados">
           </div>
+        </div>
       </div>
-      <div class="row">
+      <div class="row" style="margin-top: 2%;">
         <div class="col-12 col-md-6 col-sm-12">
           <label>
             <strong>c) PROGRAMAS INFORMÁTICOS</strong>
@@ -98,92 +103,184 @@
         </div>
       </div>
       <div class="row">
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="excel" value="no" (click)="cerrarOtro(true)" [(ngModel)]="componente.excel">
-              <strong> Excel</strong>
-            </label>
-          </div>
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="word" value="no" (click)="cerrarOtro(true)" [(ngModel)]="componente.word">
-              <strong> Word</strong>
-            </label>
-          </div>
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="powerPoint" value="no" (click)="cerrarOtro(true)" [(ngModel)]="componente.powerPoint">
-              <strong> Power Point</strong>
-            </label>
-          </div>
-          <div class="form-group col-12 col-md-8 col-sm-12">
-              <label for="compoFeria" class="col-form-label"><strong>Otros: </strong></label>         
-              <input type="text" id="otros" name="otros" [(ngModel)]="componente.otros">
-          </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="excel" value="no" [(ngModel)]="componente.excel">
+            <strong> Excel</strong>
+          </label>
         </div>
-        <div class="row">
-            <div class="form-check form-check-inline col-12 col-md-7 col-ms-12">
-              <label for="compoFeria" class="col-form-label"><strong>Demanda de Cursos y Asistencias Técnicas Requeridas:</strong></label>
-              <input class="form-control" type="text" id="SolicitudCursos" name="SolicitudCursos" [(ngModel)]="componente.SolicitudCursos">
-            </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="word" value="no" [(ngModel)]="componente.word">
+            <strong> Word</strong>
+          </label>
         </div>
-
-        <div class="row">
-            <div class="col-12 col-md-6 col-sm-12">
-          <label><strong>Documentación de Formalización</strong></label>
-          </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="powerPoint" value="no" [(ngModel)]="componente.powerPoint">
+            <strong> Power Point</strong>
+          </label>
         </div>
-        <div class="row">
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" id="inlineRadio1" name="licenciaAlcaldia" value="true" [(ngModel)]="componente.licenciaAlcaldia"><strong> LICENCIA ALCALDIA</strong>
-            </label>
-          </div>
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="senasag" value="true" [(ngModel)]="componente.senasag"> <strong>SENASAG</strong>
-            </label>
-          </div>
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="afp" value="true" [(ngModel)]="componente.afp"> <strong>AFP</strong>
-            </label>
-          </div>
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="cajaSalud" value="true" [(ngModel)]="componente.cajaSalud"> <strong>CAJA DE SALUD</strong>
-            </label>
-          </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12 col-md-5 col-sm-12">
+          <label for="compoFeria" class="col-form-label">
+            <strong>Otros: </strong>
+          </label>
+          <input class="form-control" type="text" id="otros" name="otros" [(ngModel)]="componente.otros">
         </div>
-        <div class="row">
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="nit" value="true" [(ngModel)]="componente.nit"><strong> NIT</strong>
-            </label>
-          </div>
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="fundaempresa" value="true" [(ngModel)]="componente.fundaempresa"><strong> FUNDEMPRESA</strong>
-            </label>
-          </div>
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="senapi" value="true" [(ngModel)]="componente.senapi"><strong> SENAPI</strong>
-            </label>
-          </div>
-          <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" name="ministerioTrabajo" value="true" [(ngModel)]="componente.ministerioTrabajo"><strong> MINISTERIO DE TRABAJO</strong>
-            </label>
-          </div>
+      </div>
+      
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-12 col-md-6 col-sm-12">
+          <label>
+            <strong>d). Asistencia Técnica y Capacitación en:</strong>
+          </label>
         </div>
-        <div class="row">
-          <div class="form-group col-12 col-md-6 col-sm-12 align-self-start">
-            <label class="form-form-label"><strong>OTRO</strong></label>
-            <input type="text" class="form-control" name="FichaOtro" id="FichaOtro" [(ngModel)]="componente.otros">
-          </div>
+      </div>
+      <div class="row">
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="serigrafia" value="true"  [(ngModel)]="componente.serigrafia">
+            <strong> Serigrafía</strong>
+          </label>
         </div>
-
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="word" value="true"  [(ngModel)]="componente.patronaje">
+            <strong> Patronaje</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="powerPoint" value="true"  [(ngModel)]="componente.bordado">
+            <strong> Bordado</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="powerPoint" value="true"  [(ngModel)]="componente.acabadoMuebles">
+            <strong> Acabado en Muebles</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-12 col-md-6 col-sm-12">
+          <label>
+            <strong>e) Capacitaciones en:</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="inocuidadAlimenticia" value="true"  [(ngModel)]="componente.inocuidadAlimenticia">
+            <strong> Inocuidad Alimentaria/BPM</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="seguridadIndustrial" value="true"  [(ngModel)]="componente.seguridadIndustrial">
+            <strong> Seguridad Industrial</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="saludOcupacional" value="true"  [(ngModel)]="componente.saludOcupacional">
+            <strong> Salud Ocupacional</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-12 col-md-6 col-sm-12">
+          <label>
+            <strong>f) Otros</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-12 col-md-6 col-sm-12 align-self-start">
+          <label class="form-form-label">
+            <strong>OTRO</strong>
+          </label>
+          <input type="text" class="form-control" name="FichaOtro" id="FichaOtro" [(ngModel)]="componente.otros">
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-12 col-md-6 col-sm-12">
+          <label>
+            <strong>3. Documentación de Formalización</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" id="inlineRadio1" name="licenciaAlcaldia" value="true" [(ngModel)]="componente.licenciaAlcaldia">
+            <strong> LICENCIA ALCALDIA</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="senasag" value="true" [(ngModel)]="componente.senasag">
+            <strong>SENASAG</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="afp" value="true" [(ngModel)]="componente.afp">
+            <strong>AFP</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="cajaSalud" value="true" [(ngModel)]="componente.cajaSalud">
+            <strong>CAJA DE SALUD</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="nit" value="true" [(ngModel)]="componente.nit">
+            <strong> NIT</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="fundaempresa" value="true" [(ngModel)]="componente.fundaempresa">
+            <strong> FUNDEMPRESA</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="senapi" value="true" [(ngModel)]="componente.senapi">
+            <strong> SENAPI</strong>
+          </label>
+        </div>
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="ministerioTrabajo" value="true" [(ngModel)]="componente.ministerioTrabajo">
+            <strong> MINISTERIO DE TRABAJO</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="personeriaJuridica" value="true" [(ngModel)]="componente.personeriaJuridica">
+            <strong> PERSONERIA JURIDICA</strong>
+          </label>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2%;">
+        <div class="form-group col-12 col-md-7 col-ms-12">
+          <label for="compoFeria" class="col-form-label">
+            <strong>4. Demanda de Cursos y Asistencias Técnicas Requeridas:</strong>
+          </label>
+          <input class="form-control" type="text" id="SolicitudCursos" name="SolicitudCursos" [(ngModel)]="componente.SolicitudCursos">
+        </div>
+      </div>
       <button class="btn btn-success btn-submit" type="submit">Guardar</button>
       <button class="btn btn-primar" (click)="atras()">Atras</button>
     </form>

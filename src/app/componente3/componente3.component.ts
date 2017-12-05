@@ -13,8 +13,8 @@ declare var $:any;
   styleUrls: ['./componente3.component.css']
 })
 export class Componente3Component implements OnInit {
-  private componentes:any = [];
-  private formalizacion:any = [];
+  public componentes:any = [];
+  public formalizacion:any = [];
 
   constructor(private service: ServiceService, private router:Router) { }
 

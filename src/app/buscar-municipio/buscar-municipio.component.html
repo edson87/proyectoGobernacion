@@ -28,47 +28,53 @@
   </h2>
 
   <div class="form-group col-12 col-md-6 col-sm-12">
-    <p><strong>Seleccione el Municipio.</strong></p>
+    <p>
+      <strong>Seleccione el Municipio.</strong>
+    </p>
     <select class="form-control" name="selectMunicipio" id="selectMunicipio" [(ngModel)]="selectMunicipio">
-      <option [value]="elegir" selected>Elegir un Municipio ...</option>
+      <!--<option [value]="elegir" selected>Elegir un Municipio ...</option>-->
       <option *ngFor="let selectMunicipio of municipios" [value]="selectMunicipio">{{selectMunicipio}}</option>
     </select>
   </div>
   <div class="form-group col-12 col-md-6 col-sm-12">
-    <p><strong>Seleccione el rubro.</strong></p>
+    <p>
+      <strong>Seleccione el rubro.</strong>
+    </p>
     <select class="form-control" name="selectRubro" id="selectRubro" [(ngModel)]="selectRubro">
-        <option [value]="elegir" selected>Elegir el rubro ...</option>
-        <option *ngFor="let selectRubro of rubros" [value]="selectRubro">{{selectRubro}}</option>
+      <!--<option [value]="elegir" selected>Elegir el rubro ...</option>-->
+      <option *ngFor="let selectRubro of rubros" [value]="selectRubro">{{selectRubro}}</option>
     </select>
     <button class="btn btn-primary btn-busqueda" (click)="buscarMunicipio(selectMunicipio,selectRubro)">Buscar</button>
   </div>
   <div>
-    <p [hidden]="mostrarPublicacion" style="color:red"><strong>Existe {{countMunicipio.count}} UPES en el municipio de {{tipoMunicipio}}</strong></p>
+    <p [hidden]="mostrarPublicacion" style="color:red">
+      <strong>Existe {{countMunicipio.count}} UPES en el municipio de {{tipoMunicipio}}</strong>
+    </p>
   </div>
 
   <table class="table table-bordered" id="myTable">
     <thead style="text-align: center;">
       <tr>
-        <th scope="col" class="estilo-tabla">Nombre</th>
-        <th scope="col" class="estilo-tabla">CI</th>
-        <th scope="col" class="estilo-tabla">Domicilio</th>
-        <th scope="col" class="estilo-tabla">Zona</th>
-        <th scope="col" class="estilo-tabla">Municipio</th>
-        <th scope="col" class="estilo-tabla">Rubro</th>
-        <th scope="col" class="estilo-tabla">Detalle Actividad</th>
-        <th scope="col" class="estilo-tabla">Licencia Alcaldia</th>
-        <th scope="col" class="estilo-tabla">Senasag</th>
-        <th scope="col" class="estilo-tabla">AFP</th>
-        <th scope="col" class="estilo-tabla">Caja de Salud</th>
-        <th scope="col" class="estilo-tabla">Nit</th>
-        <th scope="col" class="estilo-tabla">Fundaempresa</th>
-        <th scope="col" class="estilo-tabla">Ninguno</th>
-        <th scope="col" class="estilo-tabla">Norma</th>
-        <th scope="col" class="estilo-tabla">Detalle Norma</th>
-        <th scope="col" class="estilo-tabla">Componente 1</th>
-        <th scope="col" class="estilo-tabla">Componente 2</th>
-        <th scope="col" class="estilo-tabla">Componente 3</th>
-        <th scope="col">Unidades/Año</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Nombre</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">CI</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Domicilio</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Zona</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Municipio</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Rubro</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Detalle Actividad</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Licencia Alcaldia</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Senasag</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">AFP</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Caja de Salud</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Nit</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Fundaempresa</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Ninguno</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Norma</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Detalle Norma</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Componente 1</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Componente 2</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Componente 3</th>
+        <th scope="col" class="estilo-tabla estilo-grupo">Unidades/Año</th>
       </tr>
     </thead>
     <tbody>
@@ -94,7 +100,9 @@
         <td class="estilo-tabla">{{item.capaciAsitenciaTecni}}</td>
         <td class="estilo-tabla">{{item.cantidadProducida}}</td>
       </tr>
-    </tbody>  
+    </tbody>
   </table>
-  <a href="#" id="test" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>  
+  <div class="" style="margin-top: 1%;">
+    <a href="#" id="test" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>
+  </div>
 </section>

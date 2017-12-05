@@ -32,7 +32,6 @@ export class Componente1EditarComponent implements OnInit {
       this.service.showOnlyOneComponent(this.id)
         .subscribe((result)=>{
           this.componente = result[0];
-          //console.log(this.componente);
           if(this.componente['feriaMontoVenta'] == "si"){
             this.mostrarMontos = false;
           }
@@ -41,7 +40,6 @@ export class Componente1EditarComponent implements OnInit {
   }
 
   atras(){
-    //this.location.back();
     this.router.navigate(['componentes','componente1']);
   }
 
@@ -54,7 +52,6 @@ export class Componente1EditarComponent implements OnInit {
 
     this.service.updateOneComponent(this.componente)
       .subscribe((result)=>{
-        //console.log(result);
         alert("Se guardo Correctamente!");
        // $('#succesful').modal('show')
         this.router.navigate(['componentes','componente1']);

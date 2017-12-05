@@ -23,7 +23,7 @@ export class InscripcionComponent implements OnInit {
   public usuario:string;
   public rubros = [];
   public municipios = [];
-  private sociedades = [];
+  public sociedades = [];
   public mostrarOtro:boolean;
   public mostrarNombreSociedad:boolean;
 
@@ -128,13 +128,24 @@ export class InscripcionComponent implements OnInit {
       SolicitudCursos:"",
       fechaRealizada:this.ficha.fechaInscripcion,
 
+      serigrafia:false,
+      patronaje:false,
+      bordado:false,
+      acabadoMuebles:false,
+
+      inocuidadAlimenticia:false,
+      seguridadIndustrial:false,
+      saludOcupacional:false,
+
       licenciaAlcaldia:this.ficha.licenciaAlcaldia,
+      fundaempresa:this.ficha.fundaempresa,
       senasag:this.ficha.senasag,
       afp:this.ficha.afp,
       cajaSalud:this.ficha.cajaSalud,
       nit:this.ficha.nit,
       senapi:this.ficha.senapi,
       ministerioTrabajo:false,
+      personeriaJuridica:false,
 
       nombreEmpresa:this.ficha.nombreEmpresa,
       municipio:this.ficha.municipio

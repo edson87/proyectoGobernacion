@@ -38,14 +38,25 @@ export class Componente{
     otros?:string;
     SolicitudCursos?:string;
     fechaRealizada?:Date;
+
+    serigrafia?:boolean
+    patronaje?:boolean
+    bordado?:boolean
+    acabadoMuebles?:boolean
+
+    inocuidadAlimenticia?:boolean;
+    seguridadIndustrial?:boolean;
+    saludOcupacional?:boolean;
     
-    licenciaAlcaldia?: boolean;
+    fundaempresa?:boolean;
+    licenciaAlcaldia?:boolean;
     senasag?: boolean;
     afp?: boolean;
     cajaSalud?: boolean;
     nit?: boolean;
-    senapi?:boolean
-    ministerioTrabajo?:boolean
+    senapi?:boolean;
+    ministerioTrabajo?:boolean;
+    personeriaJuridica?:boolean;
 
     nombreEmpresa?:string;
     municipio?:string;

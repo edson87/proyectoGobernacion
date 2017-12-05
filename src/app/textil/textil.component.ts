@@ -8,7 +8,7 @@ import { ServiceService } from '../sharep/services/service.service';
 })
 export class TextilComponent implements OnInit {
   public textiles:any = [];
-  public titulo:string = "LISTA DE PRODUCTORES DEL RUBRO MADERA";
+  public titulo:string = "LISTA DE PRODUCTORES DEL RUBRO TEXTIL";
   public recurso:string = "textil";
   public check = "./assets/img/icons8-checkmark.png";
 

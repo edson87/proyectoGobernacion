@@ -4,24 +4,30 @@
     <table class="table table-bordered" id="myTable">
       <thead style="text-align: center;">
         <tr>
-          <th colspan="" class="estilo-tabla"></th>          
-          <th colspan="" class="estilo-tabla"></th>
-          <th colspan="" class="estilo-tabla"></th>
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>          
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>
 
-          <th colspan="" class="estilo-tabla"></th>
-          <th colspan="" class="estilo-tabla"></th>
-          <th colspan="4" class="estilo-tabla">Gestion Empresarial</th>
-          <th colspan="" class="estilo-tabla"></th>
-          <th colspan="4" class="estilo-tabla">Programas Informaticos</th>
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>
+          <th colspan="4" class="estilo-tabla estilo-grupo">Gestion Empresarial</th>
 
-          <th colspan="" class="estilo-tabla"></th>
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>
 
-          <th colspan="7" class="estilo-tabla">Formalización de la Empresa</th>
+          <th colspan="4" class="estilo-tabla estilo-grupo">Programas Informaticos</th>
 
-          <th colspan="" class="estilo-tabla"></th>
-          <th colspan="" class="estilo-tabla"></th>
-          <th colspan="" class="estilo-tabla"></th>
-          <th colspan="" class="estilo-tabla"></th>
+          <th colspan="4" class="estilo-tabla estilo-grupo">Asistencia Técnica y Capacitación</th>
+
+          <th colspan="3" class="estilo-tabla estilo-grupo">Capacitaciones</th>          
+
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>
+
+          <th colspan="8" class="estilo-tabla estilo-grupo">Formalización de la Empresa</th>
+
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>
         </tr>
 
 
@@ -40,10 +46,20 @@
           <th scope="col" class="estilo-tabla">Plan de Negocios</th>
 
           <th scope="col" class="estilo-tabla">Certificaciones</th>
+
           <th scope="col" class="estilo-tabla">Excel</th>
           <th scope="col" class="estilo-tabla">Word</th>
           <th scope="col" class="estilo-tabla">Power Point</th>
           <th scope="col" class="estilo-tabla">Otros</th>
+
+          <th scope="col" class="estilo-tabla">Serigrafia</th>
+          <th scope="col" class="estilo-tabla">Patronaje</th>
+          <th scope="col" class="estilo-tabla">Bordado</th>
+          <th scope="col" class="estilo-tabla">Acabado en Muebles</th>
+
+          <th scope="col" class="estilo-tabla">Inocuidad Alimentaria/BPM</th>
+          <th scope="col" class="estilo-tabla">Seguridad Industrial</th>
+          <th scope="col" class="estilo-tabla">Salud Ocupacional</th>
 
           <th scope="col" class="estilo-tabla">Cursos Solicitados</th>
 
@@ -54,6 +70,7 @@
           <th scope="col" class="estilo-tabla">CAJA NACIONAL</th>
           <th scope="col" class="estilo-tabla">AFP'S</th>
           <th scope="col" class="estilo-tabla">MINISTERIO DE TRABAJO</th>
+          <th scope="col" class="estilo-tabla">PERSONERIA JURIDICA</th>
 
           <th scope="col" class="estilo-tabla">Fecha Realizada</th>
           <th scope="col" class="estilo-tabla">Municipio</th>
@@ -78,20 +95,31 @@
           <td class="estilo-tabla">{{componente.planNegocios}}</td>
 
           <td class="estilo-tabla">{{componente.certificados}}</td>
+
           <td class="estilo-tabla">{{componente.excel}}</td>
           <td class="estilo-tabla">{{componente.word}}</td>
           <td class="estilo-tabla">{{componente.powerPoint}}</td>
           <td class="estilo-tabla">{{componente.otros	}}</td>
 
+          <td class="estilo-tabla">{{componente.serigrafia}}</td>
+          <td class="estilo-tabla">{{componente.patronaje}}</td>
+          <td class="estilo-tabla">{{componente.bordado}}</td>
+          <td class="estilo-tabla">{{componente.acabadoMuebles}}</td>
+
+          <td class="estilo-tabla">{{componente.inocuidadAlimenticia}}</td>
+          <td class="estilo-tabla">{{componente.seguridadIndustrial}}</td>
+          <td class="estilo-tabla">{{componente.saludOcupacional}}</td>
+
           <td class="estilo-tabla">{{componente.SolicitudCursos	}}</td>
 
+          <td class="estilo-tabla">{{componente.fundaempresa}}</td>
+          <td class="estilo-tabla">{{componente.nit}}</td>
           <td class="estilo-tabla">{{componente.licenciaAlcaldia}}</td>
           <td class="estilo-tabla">{{componente.senasag}}</td>
-          <td class="estilo-tabla">{{componente.afp}}</td>
           <td class="estilo-tabla">{{componente.cajaSalud}}</td>
-          <td class="estilo-tabla">{{componente.nit}}</td>
-          <td class="estilo-tabla">{{componente.senapi}}</td>
+          <td class="estilo-tabla">{{componente.afp}}</td>
           <td class="estilo-tabla">{{componente.ministerioTrabajo}}</td>
+          <td class="estilo-tabla">{{componente.personeriaJuridica}}</td>
 
           <td class="estilo-tabla">{{componente.fechaRealizada | date:'M/d/yy'	}}</td>
           <td class="estilo-tabla">{{componente.municipio}}</td>

@@ -17,7 +17,12 @@ export class Componente2EditarComponent implements OnInit {
   public id:number;
   public componente:any = [];
   public mostrarAsesoramiento:boolean;
-
+  options: DatepickerOptions = {
+    displayFormat: 'MMM D[,] YYYY',
+    //barTitleFormat: 'yyyy-MM-dd',
+    locale: frLocale
+  };
+  
   constructor(private router:Router, private route:ActivatedRoute, private service:ServiceService) { }
 
   ngOnInit() {
