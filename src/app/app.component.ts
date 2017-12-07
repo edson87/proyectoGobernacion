@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public titulo:string = 'Proyecto Fortalecimiento A Las Unidades Productivas Económicas En Cochabamba';
+  public titulo:string = 'Proyecto Fortalecimiento a las Unidades Productivas Económicas en Cochabamba';
 
 
   ngOnInit() {

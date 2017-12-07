@@ -50,14 +50,14 @@ export class TablaTextilComponent implements OnInit {
 
     let printContents, popupWin;
     printContents = document.getElementById('printSection').innerHTML;
-    popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
+    popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=100%');
     popupWin.document.open();
     popupWin.document.write(`
        <html>
            <head>
                <title>Rubro Textil</title>
                <style rel="stylesheet" href="style.css">
-                   //........Customized style.......
+
                </style>
            </head>
            <body onload="window.print();window.close()">${printContents}
@@ -66,5 +66,4 @@ export class TablaTextilComponent implements OnInit {
     );
     popupWin.document.close();
   }
-
 }

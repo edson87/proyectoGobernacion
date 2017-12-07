@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../sharep/services/service.service';
-declare var jQuery:any;
-declare var $:any;
+declare var jQuery: any;
+declare var $: any;
 
 
 
@@ -16,9 +16,9 @@ export class BuscarMunicipioComponent implements OnInit {
   public rubros: any = [];
   public countMunicipio: any = [];
   public tipoMunicipio: any = [];
-  public mostrarPublicacion:boolean;
-  public selectMunicipio:any;
-  public selectRubro:any;
+  public mostrarPublicacion: boolean;
+  public selectMunicipio: any;
+  public selectRubro: any;
 
   constructor(private service: ServiceService) { }
 
@@ -38,15 +38,15 @@ export class BuscarMunicipioComponent implements OnInit {
     tab_text = tab_text + '<x:WorksheetOptions><x:Panes></x:Panes></x:WorksheetOptions></x:ExcelWorksheet>';
     tab_text = tab_text + '</x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body>';
     tab_text = tab_text + "<table border='1px'>";
-    
-   //get table HTML code
+
+    //get table HTML code
     tab_text = tab_text + $('#myTable').html();
     tab_text = tab_text + '</table></body></html>';
 
     var data_type = 'data:application/vnd.ms-excel';
     $('#test').attr('href', data_type + ', ' + encodeURIComponent(tab_text));
     $('#test').attr('download', 'Test file.xls');
-   }
+  }
 
   searchByMunicipio(value: any) {
     this.mostrarPublicacion = false;
@@ -56,12 +56,12 @@ export class BuscarMunicipioComponent implements OnInit {
         if (result[0] === undefined) {
           this.countMunicipio.count = 0;
           this.tipoMunicipio = value.toString();
-        }else{  
+        } else {
           this.tipoMunicipio = result[0]['municipio'];
           this.service.countByMunicipio(result[0]['municipio'])
             .subscribe((result) => {
               this.countMunicipio = result[0];
-          })
+            })
         }
       })
   }
@@ -74,28 +74,27 @@ export class BuscarMunicipioComponent implements OnInit {
         if (result[0] === undefined) {
           this.countMunicipio.count = 0;
           this.tipoMunicipio = municipio.toString();
-        }else{
+        } else {
           this.tipoMunicipio = result[0]['municipio'];
           this.service.countByMunicipioAndRubro(municipio, rubro)
-          .subscribe((result) => {
-            this.countMunicipio = result[0];
-          })
+            .subscribe((result) => {
+              this.countMunicipio = result[0];
+            })
         }
       })
   }
 
   buscarMunicipio(municipio: any, rubro: any) {
-    //console.log("municipio: ", municipio)
-    //console.log("rubro: ", rubro)
+
     if (municipio != undefined && rubro != undefined) {
-      //console.log("muestro por dos queries");
-      this.searchByMunicipioAndRubro(municipio,rubro);
+      this.searchByMunicipioAndRubro(municipio, rubro);
     } else if (municipio != undefined && rubro === undefined) {
-      //console.log("muestro solo municipio", municipio)
-     // console.log( rubro)
       this.searchByMunicipio(municipio);
-    } else if (municipio == undefined && rubro != undefined) {
-      alert("Seleccione un municipio");
+    }else if(municipio === undefined && rubro != undefined){
+      $('#exampleModal').modal('show')
+      this.selectRubro = "";
+    }else if (municipio == undefined && rubro === undefined) {
+      $('#exampleModal').modal('show')      
     }
   }
 }

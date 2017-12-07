@@ -26,8 +26,6 @@ export class Ficha {
     fechaInscripcion?: Date;
     licenciaAlcaldia?: boolean;
     senasag?: boolean;
-    afp?: boolean;
-    cajaSalud?: boolean;
     nit?: boolean;
     senapi?:boolean
     ninguno?: boolean;

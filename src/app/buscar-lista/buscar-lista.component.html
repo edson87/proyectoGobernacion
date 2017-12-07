@@ -57,7 +57,9 @@
     </div>-->
 
     <div *ngIf="marcaCodigo">
-      <h4><strong>Busqueda por Nombre</strong></h4>
+      <h4>
+        <strong>Busqueda por Nombre</strong>
+      </h4>
 
       <div class="card bg-light mb-3" style="max-width: 40rem;" *ngFor="let codigo of codigoP">
         <div class="">
@@ -99,14 +101,18 @@
             <strong>Senasag:</strong>
             <img class="check" src="{{check}}">
           </div>
-          <div class="card-text" *ngIf="codigo.afp">
+          <div class="card-text" *ngIf="codigo.senapi">
+            <strong>Senapi:</strong>
+            <img class="check" src="{{check}}">
+          </div>
+          <!--<div class="card-text" *ngIf="codigo.afp">
             <strong>AFP:</strong>
             <img class="check" src="{{check}}">
           </div>
           <div class="card-text" *ngIf="codigo.cajaSalud">
             <strong>Caja de Salud:</strong>
             <img class="check" src="{{check}}">
-          </div>
+          </div>-->
           <div class="card-text" *ngIf="codigo.nit">
             <strong>Nit:</strong>
             <img class="check" src="{{check}}">
@@ -160,7 +166,9 @@
 
     </div>
     <div *ngIf="marcaNombre">
-      <h4><strong>Busqueda por Celula de Identidad</strong></h4>
+      <h4>
+        <strong>Busqueda por Celula de Identidad</strong>
+      </h4>
 
       <div class="card bg-light mb-3" style="max-width: 40rem;" *ngFor="let ci of ciP">
         <div class="row">
@@ -197,12 +205,8 @@
             <strong>Senasag:</strong>
             <img class="check" src="{{check}}">
           </div>
-          <div class="card-text" *ngIf="ci.afp">
-            <strong>AFP:</strong>
-            <img class="check" src="{{check}}">
-          </div>
-          <div class="card-text" *ngIf="ci.cajaSalud">
-            <strong>Caja de Salud:</strong>
+          <div class="card-text" *ngIf="ci.senapi">
+            <strong>Senapi:</strong>
             <img class="check" src="{{check}}">
           </div>
           <div class="card-text" *ngIf="ci.nit">

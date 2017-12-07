@@ -13,10 +13,9 @@
           <th scope="col" class="estilo-tabla estilo-grupo">Detalle Actividad</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Licencia Alcaldia</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Senasag</th>
-          <th scope="col" class="estilo-tabla estilo-grupo">AFP</th>
-          <th scope="col" class="estilo-tabla estilo-grupo">Caja de Salud</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Nit</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Fundaempresa</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Senapi</th>          
           <th scope="col" class="estilo-tabla estilo-grupo">Ninguno</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Norma</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Detalle Norma</th>
@@ -28,26 +27,25 @@
       </thead>
       <tbody>
         <tr *ngFor="let cuero of cueros">
-          <th scope="row">{{cuero.solicitante}}</th>
-          <td>{{cuero.ci}}</td>
-          <td>{{cuero.direccion}}</td>
-          <td>{{cuero.zona}}</td>
-          <td>{{cuero.municipio}}</td>
-          <td>{{cuero.actividadPrincipal}}</td>
-          <td>{{cuero.descripcionActividad}}</td>
-          <td>{{cuero.licenciAlcaldia}}</td>
-          <td>{{cuero.senasag}}</td>
-          <td>{{cuero.afp}}</td>
-          <td>{{cuero.cajaSalud}}</td>
-          <td>{{cuero.nit}}</td>
-          <td>{{cuero.fundaempresa}}</td>
-          <td>{{cuero.ninguno}}</td>
-          <td>{{cuero.norma}}</td>
-          <td>{{cuero.detalleNorma}}</td>
-          <td>{{cuero.aperturaMercado}}</td>
-          <td>{{cuero.apolloServFinanciero}}</td>
-          <td>{{cuero.capaciAsitenciaTecni}}</td>
-          <td>{{cuero.cantidadProducida}}</td>
+          <th scope="row" class="estilo-tabla">{{cuero.solicitante}}</th>
+          <td class="estilo-tabla">{{cuero.ci}}</td>
+          <td class="estilo-tabla">{{cuero.direccion}}</td>
+          <td class="estilo-tabla">{{cuero.zona}}</td>
+          <td class="estilo-tabla">{{cuero.municipio}}</td>
+          <td class="estilo-tabla">{{cuero.actividadPrincipal}}</td>
+          <td class="estilo-tabla">{{cuero.descripcionActividad}}</td>
+          <td class="estilo-tabla">{{cuero.licenciAlcaldia}}</td>
+          <td class="estilo-tabla">{{cuero.senasag}}</td>
+          <td class="estilo-tabla">{{cuero.nit}}</td>
+          <td class="estilo-tabla">{{cuero.fundaempresa}}</td>
+          <td class="estilo-tabla">{{cuero.senapi}}</td>          
+          <td class="estilo-tabla">{{cuero.ninguno}}</td>
+          <td class="estilo-tabla">{{cuero.norma}}</td>
+          <td class="estilo-tabla">{{cuero.detalleNorma}}</td>
+          <td class="estilo-tabla">{{cuero.aperturaMercado}}</td>
+          <td class="estilo-tabla">{{cuero.apolloServFinanciero}}</td>
+          <td class="estilo-tabla">{{cuero.capaciAsitenciaTecni}}</td>
+          <td class="estilo-tabla">{{cuero.cantidadProducida}}</td>
         </tr>
       </tbody>
     </table>

@@ -74,8 +74,6 @@ export class InscripcionComponent implements OnInit {
       fechaInscripcion:this.ficha.fechaInscripcion,
       licenciaAlcaldia:this.ficha.licenciaAlcaldia,
       senasag:this.ficha.senasag,
-      afp:this.ficha.afp ,
-      cajaSalud:this.ficha.cajaSalud,
       nit:this.ficha.nit,
       senapi:this.ficha.senapi,
       ninguno:this.ficha.ninguno,
@@ -140,8 +138,7 @@ export class InscripcionComponent implements OnInit {
       licenciaAlcaldia:this.ficha.licenciaAlcaldia,
       fundaempresa:this.ficha.fundaempresa,
       senasag:this.ficha.senasag,
-      afp:this.ficha.afp,
-      cajaSalud:this.ficha.cajaSalud,
+
       nit:this.ficha.nit,
       senapi:this.ficha.senapi,
       ministerioTrabajo:false,
@@ -151,7 +148,8 @@ export class InscripcionComponent implements OnInit {
       municipio:this.ficha.municipio
 
     }
-    console.log(this.ficha);
+    
+
     //console.log(this.componente)
     /*let codigo = this.ficha['codigo'].toString();
     this._service.searchByCode(codigo)
@@ -175,10 +173,7 @@ export class InscripcionComponent implements OnInit {
         },err => {
           console.log(err);
         });
-     /* }
-    },err =>{
-      console.log(err);
-    });*/
+
     this.fichasform.reset();
   }
 

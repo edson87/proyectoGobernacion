@@ -13,10 +13,9 @@
           <th scope="col" class="estilo-tabla estilo-grupo">Detalle Actividad</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Licencia Alcaldia</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Senasag</th>
-          <th scope="col" class="estilo-tabla estilo-grupo">AFP</th>
-          <th scope="col" class="estilo-tabla estilo-grupo">Caja de Salud</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Nit</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Fundaempresa</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Senapi</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Ninguno</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Norma</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Detalle Norma</th>
@@ -37,10 +36,9 @@
           <td class="estilo-tabla">{{alimento.descripcionActividad}}</td>
           <td class="estilo-tabla">{{alimento.licenciAlcaldia}}</td>
           <td class="estilo-tabla">{{alimento.senasag}}</td>
-          <td class="estilo-tabla">{{alimento.afp}}</td>
-          <td class="estilo-tabla">{{alimento.cajaSalud}}</td>
           <td class="estilo-tabla">{{alimento.nit}}</td>
           <td class="estilo-tabla">{{alimento.fundaempresa}}</td>
+          <td class="estilo-tabla">{{alimento.senapi}}</td>
           <td class="estilo-tabla">{{alimento.ninguno}}</td>
           <td class="estilo-tabla">{{alimento.norma}}</td>
           <td class="estilo-tabla">{{alimento.detalleNorma}}</td>
@@ -55,6 +53,5 @@
   <div class="" style="margin-top: 1%;">
     <input type="button" (click)="print()" value="Imprimir" class="btn-table" />
     <a href="#" id="alimento" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>
-    <!-- <button href="#" id="alimento" (click)="fnExcelReport()" class="btn-table">Descargar</button> -->
   </div>
 </div>

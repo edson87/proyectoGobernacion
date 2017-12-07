@@ -51,8 +51,6 @@ export class Componente{
     fundaempresa?:boolean;
     licenciaAlcaldia?:boolean;
     senasag?: boolean;
-    afp?: boolean;
-    cajaSalud?: boolean;
     nit?: boolean;
     senapi?:boolean;
     ministerioTrabajo?:boolean;

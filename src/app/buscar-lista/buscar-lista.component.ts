@@ -32,6 +32,7 @@ export class BuscarListaComponent implements OnInit {
   public filteredList = [];
   public elementRef;
   public result:any=[];
+  
   constructor(private _location:Location,private service:ServiceService, private router:Router,myElement: ElementRef) {
     this.elementRef = myElement;
   }
@@ -103,7 +104,7 @@ selectName(){
     .subscribe((result) => {
         this.codigoP = result;
         console.log(result)
-        this.codigoP[0]['telefono']? this.telMostrar = true : this.telMostrar = false;
+       // this.codigoP[0]['telefono']? this.telMostrar = true : this.telMostrar = false;
     })
   }
 

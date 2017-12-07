@@ -40,7 +40,7 @@ import { ComponentesModule } from './componentes/componentes.module';
     RubrosModule,
     TablaModule,
     NgDatepickerModule,
-    ComponentesModule,
+    ComponentesModule
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]

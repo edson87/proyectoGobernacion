@@ -7,18 +7,18 @@
 	</li>
 	<li class="nav-item">
 		<a class="nav-link" [routerLink]="['/rubros']">Buscar por Rubro</a>
-	<li class="nav-item">
-		<a class="nav-link" [routerLink]="['/municipio']">Buscar por Municipio</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" [routerLink]="['/tabla']">Actividad por Rubro</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" [routerLink]="['/componentes']">Componentes</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" [routerLink]="['/login']">Salir</a>
-	</li>
+		<li class="nav-item">
+			<a class="nav-link" [routerLink]="['/municipio']">Buscar por Municipio</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" [routerLink]="['/tabla']">Actividad por Rubro</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" [routerLink]="['/componentes']">Componentes</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" [routerLink]="['/login']">Salir</a>
+		</li>
 </ul>
 
 <section class="container-fluid" id="inscripcion-section">
@@ -62,23 +62,35 @@
 		</div>
 	</div>
 
-	<div>
-		<h1>{{titulo}}</h1>
+	<div class="margen">
+		<img src="../../assets/img/encabezado.png" class="img-fluid" alt="Responsive image" id="img">
+		<h4 class="titulo">
+			<strong>FORMULARIO DE SOLICITUD DE SERVICIOS DEL PROYECTO
+				<BR>A TRAVÉS DEL MODELO DE DESARROLLO EMPRESARIAL</strong>
+		</h4>
 
 		<form #fichasform="ngForm" (ngSubmit)="onSubmit()">
-			<h4>I) Datos Generales</h4>
+			<div class="datos-generales">
+				<h5>
+					<strong>I) DATOS GENERALES</strong>
+				</h5>
+			</div>
 			<div class="row">
 				<div class="form-group col-12 col-md-5 col-sm-12">
-					<label for="codigo" class="col-form-label"><strong>Codigo Solicitante (*)</strong></label>
+					<label for="codigo" class="col-form-label">
+						<strong>Codigo Solicitante (*)</strong>
+					</label>
 					<input #codigo="ngModel" id="codigo" type="text" name="codigo" class="form-control" [(ngModel)]="ficha.codigo" required>
 					<div *ngIf="codigo.invalid && codigo.touched" class="alert alert-danger">
 						El codigo es requerido.
 					</div>
 				</div>
 				<div class="form-group col-12 col-md-5 col-sm-12">
-					<label for="FichaFecha" class="col-form-label"><strong>Fecha Inscripción (*)</strong></label>
-					<input #fechaInscripcion="ngModel" id="fechaInscripcion" type="date" id="FichaFecha" name="fechaInscripcion" class="form-control" 
-							[(ngModel)]="ficha.fechaInscripcion" required>
+					<label for="FichaFecha" class="col-form-label">
+						<strong>Fecha Inscripción (*)</strong>
+					</label>
+					<input #fechaInscripcion="ngModel" id="fechaInscripcion" type="date" id="FichaFecha" name="fechaInscripcion" class="form-control"
+					 [(ngModel)]="ficha.fechaInscripcion" required>
 					<div *ngIf="fechaInscripcion.invalid && fechaInscripcion.touched" class="alert alert-danger">
 						La fecha de inscripcion es requerida.
 					</div>
@@ -87,82 +99,110 @@
 
 			<div class="  row ">
 				<div class=" form-group col-12 col-md-8 col-sm-12">
-					<label for="FichaSolicitante" class="col-form-label"><strong>Nombre Solicitante (*)</strong></label>
-					<input  #solicitante="ngModel" type="text" class="form-control" id="FichaSolicitante" name="FichaSolicitante" placeholder="Nombre Completo" 
-							[(ngModel)]="ficha.solicitante"  required>
+					<label for="FichaSolicitante" class="col-form-label">
+						<strong>Nombre Solicitante (*)</strong>
+					</label>
+					<input #solicitante="ngModel" type="text" class="form-control" id="FichaSolicitante" name="FichaSolicitante" placeholder="Nombre Completo"
+					 [(ngModel)]="ficha.solicitante" required>
 					<div *ngIf="solicitante.invalid && solicitante.touched" class="alert alert-danger">
 						El nombre es requerido.
 					</div>
 				</div>
 				<div class="form-group col-12 col-md-4 col-sm-12">
-					<label for="FichaCI" class="col-form-label"><strong>Celula De Identidad</strong></label>
+					<label for="FichaCI" class="col-form-label">
+						<strong>Celula De Identidad</strong>
+					</label>
 					<input type="number" name="FichaCI" class="form-control" id="FichaCI" placeholder="Ej. 5280036" [(ngModel)]="ficha.ci">
 				</div>
 			</div>
 
 			<div class="form-group  row ">
 				<div class="col-12 col-md-5 col-sm-12">
-					<label for="FichaDireccion" class="col-form-label"><strong>Dirección (Domicilio Habitual)</strong></label>
+					<label for="FichaDireccion" class="col-form-label">
+						<strong>Dirección (Domicilio Habitual)</strong>
+					</label>
 					<div class="">
 						<input type="text" class="form-control" id="FichaDireccion" name="FichaDireccion" [(ngModel)]="ficha.direccion">
 					</div>
 				</div>
 				<div class="col-12 col-md-4 col-sm-12">
-					<label for="FichaZona" class="col-form-label"><strong>Zona/Distrito</strong></label>
+					<label for="FichaZona" class="col-form-label">
+						<strong>Zona/Distrito</strong>
+					</label>
 					<div class="">
 						<input type="text" class="form-control" id="FichaZona" name="FichaZona" [(ngModel)]="ficha.zona">
 					</div>
 				</div>
 				<div class="form-group col-12 col-md-3 col-sm-12">
-					<label for="FichaMunicipio" class="col-form-label"><strong>Municipio</strong></label>
+					<label for="FichaMunicipio" class="col-form-label">
+						<strong>Municipio</strong>
+					</label>
 					<select class="form-control" id="FichaMunicipio" [(ngModel)]="ficha.municipio" name="FichaMunicipio" #municipio="ngModel">
 						<!--<option [value]="elegir" selected>Elegir...</option>-->
 						<option *ngFor="let municipio of municipios" [value]="municipio">{{municipio}}</option>
 					</select>
 				</div>
-				
+
 			</div>
 			<div class="row">
 				<div class="form-group col-12 col-md-6 col-sm-12">
-					<label for="FichaEmail" class="col-form-label"><strong>Email</strong></label>
+					<label for="FichaEmail" class="col-form-label">
+						<strong>Email</strong>
+					</label>
 					<input type="text" class="form-control" name="FichaNoEmpresa" id="FichaNoEmpresa" placeholder="ejemplo@hotmail.com" [(ngModel)]="ficha.email"
 					 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
 				</div>
 				<div class="form-group col-12 col-md-2 col-sm-12">
-					<label for="FichaFax" class="col-form-label"><strong>Fax</strong></label>
+					<label for="FichaFax" class="col-form-label">
+						<strong>Fax</strong>
+					</label>
 					<input type="number" class="form-control" name="FichaFax" id="FichaFax" [(ngModel)]="ficha.fax">
 				</div>
 				<div class="form-group col-12 col-md-2 col-sm-12">
-					<label for="FichaTelefono" class="col-form-label"><strong>Telefono</strong></label>
+					<label for="FichaTelefono" class="col-form-label">
+						<strong>Telefono</strong>
+					</label>
 					<div class="">
 						<input type="number" class="form-control" name="FichaTelefono" id="FichaTelefono" [(ngModel)]="ficha.telefono">
 					</div>
 				</div>
 				<div class="form-group col-12 col-md-2 col-sm-12">
-					<label for="FichaCelular" class="col-form-label"><strong>Celular</strong></label>
+					<label for="FichaCelular" class="col-form-label">
+						<strong>Celular</strong>
+					</label>
 					<div class="">
 						<input type="number" class="form-control" id="FichaCelular" name="FichaCelular" [(ngModel)]="ficha.celular">
 					</div>
 				</div>
 			</div>
-			<h4><strong>I.I) Datos de la Empresa</strong></h4>
+			<div class="datos-generales">
+				<h5>
+					<strong>I.I) Datos de la Empresa</strong>
+				</h5>
+			</div>
 			<div class=" row ">
 				<div class="form-group col-12 col-md-4 col-sm-12">
-					<label for="FichaNoEmpresa" class="col-form-label"><strong>Empresa</strong></label>
+					<label for="FichaNoEmpresa" class="col-form-label">
+						<strong>Empresa</strong>
+					</label>
 					<div class="">
 						<input type="text" class="form-control" id="FichaNoEmpresa" [ngModelOptions]="{standalone: true}" [(ngModel)]="ficha.nombreEmpresa">
 					</div>
 				</div>
 				<div class="form-group col-12 col-md-4 col-sm-12">
-					<label for="FicahaSociedad" class="col-form-label"><strong>Sociedad</strong></label>
-					<select class="form-control" id="FicahaSociedad" (click)="seleccionarSociedad(sociedad)" [(ngModel)]="ficha.sociedad"
-						name="FicahaSociedad" #sociedad="ngModel">
+					<label for="FicahaSociedad" class="col-form-label">
+						<strong>Sociedad</strong>
+					</label>
+					<select class="form-control" id="FicahaSociedad" (click)="seleccionarSociedad(sociedad)" [(ngModel)]="ficha.sociedad" name="FicahaSociedad"
+					 #sociedad="ngModel">
 						<!--<option [value]="elegir" selected>Elegir...</option>-->
-						<option *ngFor="let sociedad of sociedades"  [value]="sociedad">{{sociedad}}</option>
+						<option *ngFor="let sociedad of sociedades" [value]="sociedad">{{sociedad}}</option>
 					</select>
 				</div>
 				<div class="form-group col-12 col-md-4 col-sm-12" [hidden]="mostrarNombreSociedad">
-					<label for="FichaNomSociedad" class="col-form-label"><strong>Nombre Sociedad</strong></label>
+					<label for="FichaNomSociedad" class="col-form-label">
+						<strong>Nombre Sociedad</strong>
+					</label>
 					<div class="">
 						<input type="text" class="form-control" name="FichaNomSociedad" id="FichaNomSociedad" [(ngModel)]="ficha.nombreSociedad">
 					</div>
@@ -171,19 +211,24 @@
 
 			<div class="row">
 				<div class="form-group col-12 col-md-6 col-sm-12">
-					<label for="FichaDirecEmpre" class="col-form-label"><strong>Domicilio (Domicilio de la Unidad productiva)</strong></label>
+					<label for="FichaDirecEmpre" class="col-form-label">
+						<strong>Domicilio (Domicilio de la Unidad productiva)</strong>
+					</label>
 					<div class="">
 						<input type="text" class="form-control" name="FichaDirecEmpre" id="FichaDirecEmpre" [(ngModel)]="ficha.direccionEmpresa">
 					</div>
 				</div>
 				<div class="form-group col-12 col-md-3 col-sm-12">
-					<label for="FichaZonEmpre" class="col-form-label"><strong>Zona/Distrito</strong></label>
+					<label for="FichaZonEmpre" class="col-form-label">
+						<strong>Zona/Distrito</strong>
+					</label>
 					<input type="test" class="form-control" name="FichaZonEmpre" id="FichaZonEmpre" [(ngModel)]="ficha.zonaEmpresa">
 				</div>
 				<div class="form-group col-12 col-md-3 col-sm-12">
-					<label for="FichaMuniEmpre" class="col-form-label"><strong>Municipio</strong></label>
-					<select class="form-control" id="FichaMuniEmpre" [(ngModel)]="ficha.municipioEmpresa"
-						name="FichaMuniEmpre" #municipioEmpresa="ngModel">
+					<label for="FichaMuniEmpre" class="col-form-label">
+						<strong>Municipio</strong>
+					</label>
+					<select class="form-control" id="FichaMuniEmpre" [(ngModel)]="ficha.municipioEmpresa" name="FichaMuniEmpre" #municipioEmpresa="ngModel">
 						<!--<option [value]="elegir" selected>Elegir...</option>-->
 						<option *ngFor="let municipioEmpresa of municipios" [value]="municipioEmpresa">{{municipioEmpresa}}</option>
 					</select>
@@ -191,33 +236,42 @@
 			</div>
 			<div class="row">
 				<div class="form-group col-12 col-md-4 col-sm-12">
-					<label for="FichaActPrinci" class="col-form-label"><strong>Rubro</strong></label>
-					<select class="form-control" id="actividadPrincipal" [(ngModel)]="ficha.actividadPrincipal"
-						name="actividadPrincipal" #actividadPrincipal="ngModel">
+					<label for="FichaActPrinci" class="col-form-label">
+						<strong>Rubro</strong>
+					</label>
+					<select class="form-control" id="actividadPrincipal" [(ngModel)]="ficha.actividadPrincipal" name="actividadPrincipal" #actividadPrincipal="ngModel">
 						<!--<option [value]="elegir" selected>Elegir...</option>-->
 						<option *ngFor="let actividadPrincipal of rubros" [value]="actividadPrincipal">{{actividadPrincipal}}</option>
 					</select>
 				</div>
 				<div class="form-group col-12 col-md-2 col-sm-12">
-					<label for="FichaAntiguedad" class="col-form-label"><strong>Antiguedad</strong></label>
+					<label for="FichaAntiguedad" class="col-form-label">
+						<strong>Antiguedad</strong>
+					</label>
 					<div class="">
 						<input type="text" class="form-control" id="FichaAntiguedad" name="FichaAntiguedad" [(ngModel)]="ficha.antiguedad">
 					</div>
 				</div>
 				<div class="form-group col-12 col-md-2 col-sm-12">
-					<label for="FichaOperarios" class="col-form-label"><strong>Nº de operarios</strong></label>
+					<label for="FichaOperarios" class="col-form-label">
+						<strong>Nº de operarios</strong>
+					</label>
 					<div class="">
 						<input type="number" id="FichaOperarios" name="FichaOperarios" [(ngModel)]="ficha.numOperarios">
 					</div>
 				</div>
 				<div class="form-group col-12 col-md-2 col-sm-12">
-					<label for="FichaVarones" class="col-form-label"><strong>Varones</strong></label>
+					<label for="FichaVarones" class="col-form-label">
+						<strong>Varones</strong>
+					</label>
 					<div class="">
 						<input type="number" class="form-control" id="FichaVarones" name="FichaVarones" [(ngModel)]="ficha.varones">
 					</div>
 				</div>
 				<div class="form-group col-12 col-md-2 col-sm-12">
-					<label for="FichaMujeres" class="col-form-label"><strong>Mujeres</strong></label>
+					<label for="FichaMujeres" class="col-form-label">
+						<strong>Mujeres</strong>
+					</label>
 					<div class="">
 						<input type="number" class="form-control" id="FichaMujeres" name="FichaMujeres" [(ngModel)]="ficha.mujeres">
 					</div>
@@ -225,29 +279,49 @@
 			</div>
 			<div class="row">
 				<div class="form-group col-12 col-md-6 col-sm-12">
-					<label for="FichaDescripcion" class="col-form-label"><strong>Descripcion de la actividad</strong></label>
-					<input type="text" class="form-control" name="FichaDescripcion" id="FichaDescripcion" class="form-control"
-						[(ngModel)]="ficha.descripcionActividad">
+					<label for="FichaDescripcion" class="col-form-label">
+						<strong>Descripcion de la actividad</strong>
+					</label>
+					<input type="text" class="form-control" name="FichaDescripcion" id="FichaDescripcion" class="form-control" [(ngModel)]="ficha.descripcionActividad">
 				</div>
 				<div class="form-group col-12 col-md-6 col-sm-12">
-					<label for="FichaCantidad" class="col-form-label"><strong>Unidades/Año Producidas</strong></label>
-					<input type="text" class="form-control" name="FichaCantidad"  id="FichaCantidad" class="form-control"
-						[(ngModel)]="ficha.cantidadProducida">
+					<label for="FichaCantidad" class="col-form-label">
+						<strong>Unidades/Año Producidas</strong>
+					</label>
+					<input type="text" class="form-control" name="FichaCantidad" id="FichaCantidad" class="form-control" [(ngModel)]="ficha.cantidadProducida">
 				</div>
 			</div>
-			<h4><strong>II) Documentación de Formalización</strong></h4>
+			<div class="datos-generales">
+				<h5>
+					<strong>II) Documentación de Formalización</strong>
+				</h5>
+			</div>
 			<div class="row">
 				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
 					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox" id="inlineRadio1" name="licenciaAlcaldia" value="true" [(ngModel)]="ficha.licenciaAlcaldia"><strong> LICENCIA ALCALDIA</strong>
+						<input class="form-check-input" type="checkbox" id="inlineRadio1" name="licenciaAlcaldia" value="true" [(ngModel)]="ficha.licenciaAlcaldia">
+						<strong> LICENCIA ALCALDIA</strong>
 					</label>
 				</div>
 				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
 					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox" name="senasag" value="true" [(ngModel)]="ficha.senasag"> <strong>SENASAG</strong>
+						<input class="form-check-input" type="checkbox" name="senasag" value="true" [(ngModel)]="ficha.senasag">
+						<strong>SENASAG</strong>
 					</label>
 				</div>
 				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="nit" value="true" [(ngModel)]="ficha.nit">
+						<strong> NIT</strong>
+					</label>
+				</div>
+				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" name="fundaempresa" value="true" [(ngModel)]="ficha.fundaempresa">
+						<strong> FUNDEMPRESA</strong>
+					</label>
+				</div>
+				<!--<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
 					<label class="form-check-label">
 						<input class="form-check-input" type="checkbox" name="afp" value="true" [(ngModel)]="ficha.afp"> <strong>AFP</strong>
 					</label>
@@ -256,37 +330,35 @@
 					<label class="form-check-label">
 						<input class="form-check-input" type="checkbox" name="cajaSalud" value="true" [(ngModel)]="ficha.cajaSalud"> <strong>CAJA DE SALUD</strong>
 					</label>
-				</div>
+				</div>-->
 			</div>
 			<div class="row">
 				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
 					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox" name="nit" value="true" [(ngModel)]="ficha.nit"><strong> NIT</strong>
+						<input class="form-check-input" type="checkbox" name="senapi" value="true" [(ngModel)]="ficha.senapi">
+						<strong> SENAPI</strong>
 					</label>
 				</div>
 				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
 					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox" name="fundaempresa" value="true" [(ngModel)]="ficha.fundaempresa"><strong> FUNDEMPRESA</strong>
-					</label>
-				</div>
-				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox" name="senapi" value="true" [(ngModel)]="ficha.senapi"><strong> SENAPI</strong>
-					</label>
-				</div>
-				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
-					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox" name="ninguno" value="true" [(ngModel)]="ficha.ninguno"><strong> NINGUNO</strong>
+						<input class="form-check-input" type="checkbox" name="ninguno" value="true" [(ngModel)]="ficha.ninguno">
+						<strong> NINGUNO</strong>
 					</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-12 col-md-6 col-sm-12 align-self-start">
-					<label class="form-form-label"><strong>OTRO</strong></label>
+					<label class="form-form-label">
+						<strong>OTRO</strong>
+					</label>
 					<input type="text" class="form-control" name="FichaOtro" id="FichaOtro" [(ngModel)]="ficha.otros">
 				</div>
 			</div>
-			<h4>II.I) Otras Certificaciones</h4>
+			<div class="datos-generales">
+				<h5>
+					<strong>II.I) Otras Certificaciones</strong>
+				</h5>
+			</div>
 			<div class="row">
 				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
 					<label class="form-check-label">
@@ -296,37 +368,51 @@
 				<br>
 				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
 					<label class="form-check-label">
-						<input class="form-check-input" type="radio" name="norma" value="si" (click)="value(false)" [(ngModel)]="ficha.norma"><strong>Si</strong>
+						<input class="form-check-input" type="radio" name="norma" value="si" (click)="value(false)" [(ngModel)]="ficha.norma">
+						<strong>Si</strong>
 					</label>
 				</div>
 				<div class="form-check form-check-inline col-12 col-md-2 col-ms-12">
 					<label class="form-check-label">
-						<input class="form-check-input" type="radio" name="norma" value="no" (click)="value(true)" [(ngModel)]="ficha.norma"><strong> No</strong>
+						<input class="form-check-input" type="radio" name="norma" value="no" (click)="value(true)" [(ngModel)]="ficha.norma">
+						<strong> No</strong>
 					</label>
 				</div>
 			</div>
 			<div class="row" [hidden]="mostrarOtro">
 				<div class="form-group col-12 col-md-6 col-sm-12">
-					<label class="form-form-label"><strong>Cuales</strong></label>
+					<label class="form-form-label">
+						<strong>Cuales</strong>
+					</label>
 					<input type="text" class="form-control" name="FichaDetalleNorma" id="FichaDetalleNorma" [(ngModel)]="ficha.detalleNorma">
 				</div>
 			</div>
-			<h4><strong>III) Identificacion de la demanda (Componentes)</strong></h4>
+			<div class="datos-generales">
+				<h5>
+					<strong>III) Identificacion de la demanda (Componentes)</strong>
+				</h5>
+			</div>
 			<div class="row">
 				<div class="form-check form-check-inline col-12 col-md-12 col-ms-12">
-					<label class="form-form-label"><strong>Apertura a Mercados(Ej. Identificar mercados, Promocion de productos, Otros)</strong></label>
+					<label class="form-form-label">
+						<strong>Apertura a Mercados(Ej. Identificar mercados, Promocion de productos, Otros)</strong>
+					</label>
 					<input class="form-form-input" type="checkbox" name="aperturaMercado" value="si" [(ngModel)]="ficha.aperturaMercado">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-check form-check-inline col-12 col-md-12 col-ms-12">
-					<label class="form-form-label"><strong>Apoyos a Servicios Financieros(Ej. Mejores condiciones tasa, Tiempo, Momto, Garantia, Otros)</strong></label>
+					<label class="form-form-label">
+						<strong>Apoyos a Servicios Financieros(Ej. Mejores condiciones tasa, Tiempo, Momto, Garantia, Otros)</strong>
+					</label>
 					<input class="form-form-input" type="checkbox" name="apolloServiciosFinancieron" value="si" [(ngModel)]="ficha.apolloServiciosFinancieron">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-check form-check-inline col-12 col-md-12 col-ms-12">
-					<label class="form-form-label"><strong>Asistencia Técnica Capacitación (Ej. En administración, marketing, control de calidad, certificación sanitaria, otros)</strong></label>
+					<label class="form-form-label">
+						<strong>Asistencia Técnica Capacitación (Ej. En administración, marketing, control de calidad, certificación sanitaria, otros)</strong>
+					</label>
 					<input class="form-form-input" type="checkbox" name="capacitacionAsistenciaTecnica" value="si" [(ngModel)]="ficha.capacitacionAsistenciaTecnica">
 				</div>
 			</div>

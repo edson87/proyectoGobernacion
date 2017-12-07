@@ -27,6 +27,7 @@ import { Componente2EditarComponent } from './componente2-editar/componente2-edi
 import { Componente3Component } from './componente3/componente3.component';
 import { Componente3EditarComponent } from './componente3-editar/componente3-editar.component';
 
+
 const routes: Routes = [
   {path:'', redirectTo: '/login', pathMatch:'full'},
   {path:'login', component:LoginComponent },
