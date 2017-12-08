@@ -53,7 +53,6 @@ export class EditarListaComponent implements OnInit {
 
       this.service.searchByItem(this.listaId)
         .subscribe((result) => {
-          console.log(result)
           //console.log(result[0]['fechaInscripcion']);
           this.ficha = result[0];
         })
@@ -118,7 +117,6 @@ export class EditarListaComponent implements OnInit {
       senasag: this.ficha.senasag,senapi: this.ficha.senapi} 
   
 
-      console.log(this.componente)
     this.service.updateRecord(this.ficha)
       .subscribe((result) => {
 

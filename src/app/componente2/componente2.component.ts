@@ -19,7 +19,6 @@ export class Componente2Component implements OnInit {
   ngOnInit() {
     this.service.showComponent2()
     .subscribe((result)=>{
-      //console.log(result);
       this.componentes = result;
     })
   }
@@ -42,7 +41,6 @@ export class Componente2Component implements OnInit {
   }
 
   editar(value){
-    //console.log(value);
     this.router.navigate(['componentes','componente2-editar',value]);
   }
 }

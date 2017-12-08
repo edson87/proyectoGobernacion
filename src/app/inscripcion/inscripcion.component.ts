@@ -26,7 +26,7 @@ export class InscripcionComponent implements OnInit {
   public sociedades = [];
   public mostrarOtro:boolean;
   public mostrarNombreSociedad:boolean;
-
+  public cabezera = "./assets/img/encabezado.png";
 
   constructor(private _location:Location, private _service:ServiceService, private _route:ActivatedRoute) { }
 
@@ -150,7 +150,6 @@ export class InscripcionComponent implements OnInit {
     }
     
 
-    //console.log(this.componente)
     /*let codigo = this.ficha['codigo'].toString();
     this._service.searchByCode(codigo)
     .subscribe((result)=>{
@@ -160,7 +159,6 @@ export class InscripcionComponent implements OnInit {
         alert("Entra")*/
         this._service.insertRecords(this.ficha)
         .subscribe((result) => {
-         // console.log("bien", result)
          this._service.insertComponents(this.componente)
          .subscribe((result)=>{
           window.scroll(0,0);

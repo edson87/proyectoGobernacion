@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MenuComponent } from '../app/menu/menu.component';
+//import { MenuComponent } from '../app/menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { InscripcionComponent } from './inscripcion/inscripcion.component';
 import { BuscarListaComponent } from './buscar-lista/buscar-lista.component';
@@ -31,7 +31,7 @@ import { Componente3EditarComponent } from './componente3-editar/componente3-edi
 const routes: Routes = [
   {path:'', redirectTo: '/login', pathMatch:'full'},
   {path:'login', component:LoginComponent },
-  {path:'menu/:user', component:MenuComponent},
+  /*{path:'menu/:user', component:MenuComponent},*/
   {path:'inscripcion', component:InscripcionComponent},
   {path:'buscar', component:BuscarListaComponent},
   {path:'municipio', component:BuscarMunicipioComponent},

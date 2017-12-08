@@ -32,11 +32,9 @@ export class Componente3EditarComponent implements OnInit {
     this.formacion = ['primaria','secundaria','profesional','tecnico','otros']
     this.route.params.subscribe((params) => {
       this.id = params['id'];
-      console.log(this.id);
       this.service.showOnlyOneComponent(this.id)
         .subscribe((result)=>{
           this.componente = result[0];
-          console.log(this.componente);
           if(this.componente['certificados'] != ""){
             this.mostrarOpcion = false;
           }
@@ -56,7 +54,6 @@ export class Componente3EditarComponent implements OnInit {
     this.router.navigate(['componentes','componente3']);
   }
   onSubmit(){
-    //console.log(this.componente)
     if(this.componente['certificados'] == "no"){
       this.componente['certificados'] = "";
     } 

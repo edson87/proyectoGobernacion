@@ -29,11 +29,9 @@ export class Componente2EditarComponent implements OnInit {
     this.mostrarAsesoramiento = true;
     this.route.params.subscribe((params) => {
       this.id = params['id'];
-      console.log(this.id);
       this.service.showOnlyOneComponent(this.id)
         .subscribe((result)=>{
           this.componente = result[0];
-          console.log(this.componente);
           if(this.componente['asesoramientoSeguimiento'] == "si"){
             this.mostrarAsesoramiento = false;
           }
@@ -42,7 +40,6 @@ export class Componente2EditarComponent implements OnInit {
   }
 
   abrir(value){
-    console.log(value);
     this.mostrarAsesoramiento = value;
   }
 
@@ -60,7 +57,6 @@ export class Componente2EditarComponent implements OnInit {
       this.componente['entidadFinanciera'] = "";
       this.componente['observaciones'] = "";
     } 
-    //console.log(this.componente);   
     
     this.service.updateOneComponent(this.componente)
     .subscribe(()=>{

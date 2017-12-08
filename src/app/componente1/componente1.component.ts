@@ -21,7 +21,6 @@ export class Componente1Component implements OnInit {
     this.service.showComponent1()
       .subscribe((result)=>{
         this.componentes = result;
-        //console.log(result)
       })
   }
 

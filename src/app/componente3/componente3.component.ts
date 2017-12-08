@@ -26,14 +26,11 @@ export class Componente3Component implements OnInit {
     })*/
     this.service.showComponent3()
       .subscribe((result)=>{
-        //console.log(result);
         this.componentes = result
-        console.log(this.componentes);
       });
     
     /*this.service.showFormulation()
       .subscribe((result)=>{
-        console.log(result)
         this.formalizacion = result;
     })*/
   }

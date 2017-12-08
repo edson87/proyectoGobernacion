@@ -45,16 +45,6 @@
       </div>
       <button class="btn btn-primary btn-busqueda" (click)="buscarNombre()">Buscar</button>
     </div>
-    <!--<div class="form-group">
-      <label for="buscarNombre">Mostrar por municipio</label>
-      
-      <select class="form-control col-md-4 col-sm-12" id="bucarMunicipio" [(ngModel)]="municipio"
-        name="bucarMunicipio" #bucarMunicipio="ngModel" required>
-        <option *ngFor="let municipio of municipios" [value]="municipio">{{municipio}}</option>
-      </select>
-      
-      <button class="btn btn-primary btn-busqueda" (click)="buscarMunicipio(municipio)">Buscar</button>
-    </div>-->
 
     <div *ngIf="marcaCodigo">
       <h4>
@@ -105,14 +95,6 @@
             <strong>Senapi:</strong>
             <img class="check" src="{{check}}">
           </div>
-          <!--<div class="card-text" *ngIf="codigo.afp">
-            <strong>AFP:</strong>
-            <img class="check" src="{{check}}">
-          </div>
-          <div class="card-text" *ngIf="codigo.cajaSalud">
-            <strong>Caja de Salud:</strong>
-            <img class="check" src="{{check}}">
-          </div>-->
           <div class="card-text" *ngIf="codigo.nit">
             <strong>Nit:</strong>
             <img class="check" src="{{check}}">
@@ -260,40 +242,5 @@
         </div>
       </div>
     </div>
-
-    <!-- <div *ngIf="marcaNombre">
-      <h4>Ver por municipio:</h4>
-     
-      <div class="card bg-light mb-3" style="max-width: 40rem;" *ngFor="let ci of ciP">
-        <div class="row">
-          <div class="card-header col-md-6"><strong>Codigo:</strong> {{ci.codigo}}</div>
-          <div class="card-header col-md-6 codigo"><strong>Ci:</strong> {{ci.ci}}</div>
-        </div>
-        <div class="card-body text-dark">
-          <h4 class="card-title"><strong>Nombre:</strong> {{ci.solicitante}}</h4>
-          <div class="card-text" ><strong>Telefono:</strong> {{ci.telefono}}</div>
-          <div class="card-text"><strong>celular:</strong> {{ci.celular}}</div>
-          <div class="card-text"><strong>Actividad Principal:</strong> {{ci.actividadPrincipal}}</div>
-          <div class="card-text"><strong>Descripcion de la actividad:</strong> {{ci.descripcionActividad}}</div>
-          <div class="card-text"><strong>Ubicaion Empresa:</strong> {{ci.direccionEmpresa}}</div>
-          <h4><strong><p><u>Documentación de acreditación</u></p></strong></h4>
-          <div class="card-text" *ngIf="ci.licenciaAlcaldia"><strong>Licencia Alcaldia:</strong> <img class="check" src="{{check}}"></div>
-          <div class="card-text" *ngIf="ci.senasag"><strong>Senasag:</strong> <img class="check" src="{{check}}"></div>
-          <div class="card-text" *ngIf="ci.afp"><strong>AFP:</strong> <img class="check" src="{{check}}"></div>
-          <div class="card-text" *ngIf="ci.cajaSalud"><strong>Caja de Salud:</strong> <img class="check" src="{{check}}"></div>
-          <div class="card-text" *ngIf="ci.nit"><strong>Nit:</strong> <img class="check" src="{{check}}"></div>
-          <div class="card-text" *ngIf="ci.ninguno"><strong>Ninguno:</strong> <img class="check" src="{{check}}"></div>
-          <div class="card-text" *ngIf="ci.fundaempresa"><strong>Fundempresa:</strong> <img class="check" src="{{check}}"></div>
-          <div class="card-text" *ngIf="ci.otros"><strong>Otros:</strong> {{ci.otros}}</div>
-          <h4><strong><p><u>Normas Bolivianas</u></p></strong></h4>
-          <div class="card-text" *ngIf="ci.norma"><strong>Tiene Norma:</strong> {{ci.norma}}</div>
-          <div class="card-text" *ngIf="ci.detalleNorma"><strong>Tipos de Normas:</strong> {{ci.detalleNorma}}</div>
-          <h4><strong><p><u>Identificación de la demanda</u></p></strong></h4>
-          <div class="card-text" *ngIf="ci.aperturaMercado"><strong>Apertura a mercados:</strong> <img class="check" src="{{check}}"></div>
-          <div class="card-text" *ngIf="ci.apolloServiciosFinancieron"><strong>Apollo financiero:</strong> <img class="check" src="{{check}}"></div>
-          <div class="card-text" *ngIf="ci.capacitacionAsistenciaTecnica"><strong>Capacitación y asistencia técnica:</strong> <img class="check" src="{{check}}"></div>
-        </div>
-      </div>
-    </div>-->
   </div>
 </section>

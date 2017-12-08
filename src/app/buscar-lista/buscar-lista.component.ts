@@ -55,11 +55,9 @@ export class BuscarListaComponent implements OnInit {
        //.map(response => response.json())
        .subscribe((result) =>{ 
          this.result = result 
-         //console.log(this.result)
          for(let i=0; i<this.result.length;i++){
           this.nombres.push(this.result[i]['solicitante'])
         }
-        //console.log(this.countries)
       });
   }
 
@@ -94,16 +92,14 @@ handleClick(event){
 }
 
 selectName(){
-  console.log(this.query)
+  //console.log(this.query)
 }
 
   buscarPorNombre(){
     const id = this.query.toString();
-    console.log(id)
     this.service.searchByNames(id)
     .subscribe((result) => {
         this.codigoP = result;
-        console.log(result)
        // this.codigoP[0]['telefono']? this.telMostrar = true : this.telMostrar = false;
     })
   }
