@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -18,7 +19,8 @@ import { TablaModule } from './tabla/tabla.module';
 import { EditarListaComponent } from './editar-lista/editar-lista.component';
 import { NgDatepickerModule } from 'ng2-datepicker';
 import { ComponentesModule } from './componentes/componentes.module';
-
+import { NotfoundComponent } from './notfound/notfound.component';
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { ComponentesModule } from './componentes/componentes.module';
     CueroComponent,
     AlimentosComponent,
     MetalComponent,
-    EditarListaComponent
+    EditarListaComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { ComponentesModule } from './componentes/componentes.module';
     NgDatepickerModule,
     ComponentesModule
   ],
-  providers: [ServiceService],
+  providers: [ServiceService/*,{provide: APP_BASE_HREF, useValue: '/'}*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
