@@ -1,5 +1,7 @@
 
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +22,7 @@ import { EditarListaComponent } from './editar-lista/editar-lista.component';
 import { NgDatepickerModule } from 'ng2-datepicker';
 import { ComponentesModule } from './componentes/componentes.module';
 import { NotfoundComponent } from './notfound/notfound.component';
-import {APP_BASE_HREF} from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +47,7 @@ import {APP_BASE_HREF} from '@angular/common';
     NgDatepickerModule,
     ComponentesModule
   ],
-  providers: [ServiceService/*,{provide: APP_BASE_HREF, useValue: '/'}*/],
+  providers: [ServiceService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

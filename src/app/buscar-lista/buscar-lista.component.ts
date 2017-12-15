@@ -108,6 +108,7 @@ export class BuscarListaComponent implements OnInit {
     this.service.searchByCI(id)
       .subscribe((result) => {
         this.ciP = result;
+        console.log(this.ciP)
       })
   }
 
