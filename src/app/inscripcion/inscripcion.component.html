@@ -191,7 +191,7 @@
 				</div>
 				<div class="form-group col-12 col-md-4 col-sm-12">
 					<label for="FicahaSociedad" class="col-form-label">
-						<strong>Sociedad</strong>
+						<strong>Organización</strong>
 					</label>
 					<select class="form-control" id="FicahaSociedad" (click)="seleccionarSociedad(sociedad)" [(ngModel)]="ficha.sociedad" name="FicahaSociedad"
 					 #sociedad="ngModel">
@@ -201,7 +201,7 @@
 				</div>
 				<div class="form-group col-12 col-md-4 col-sm-12" [hidden]="mostrarNombreSociedad">
 					<label for="FichaNomSociedad" class="col-form-label">
-						<strong>Nombre Sociedad</strong>
+						<strong>Nombre Organización</strong>
 					</label>
 					<div class="">
 						<input type="text" class="form-control" name="FichaNomSociedad" id="FichaNomSociedad" [(ngModel)]="ficha.nombreSociedad">

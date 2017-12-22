@@ -40,7 +40,7 @@ export class InscripcionComponent implements OnInit {
       "Cochabamba","Sacaba","Colomi","Villa Tunari","Tarata","Anzaldo","Arbieto","Sacabamba",
       "Cliza","Toco","Tolata","Mizque","Vila Vila","Alalay","Punata","Villa Ribero","San Benito",
       "Tacachi","Cuchumuela","Tapacarí","Tiraque","Shinahota"];
-      this.sociedades = ['Unipersonal','Asoc. Productiva','OECA','Otro'];
+      this.sociedades = ['Unipersonal','Org. Productiva','OECA','Otro'];
     this.mostrarOtro = true;
     this.mostrarNombreSociedad = true;
   }
@@ -176,7 +176,7 @@ export class InscripcionComponent implements OnInit {
   }
 
   seleccionarSociedad(value:any){
-    if (value.model === "Asoc. Productiva") {
+    if (value.model === "Org. Productiva") {
       this.mostrarNombreSociedad = false;
     }else if (value.model === "Otro") {
       this.mostrarNombreSociedad = false;
