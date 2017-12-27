@@ -1,9 +1,9 @@
-<div id="printSection" class="container-fluid" style="margin-bottom: 5%;">
+<div class="container-fluid" style="margin-bottom: 5%;">
   <h2>
     <strong>Asistencia Técnica y Capacitación</strong>
   </h2>
   <div class="scroll">
-    <table class="table table-bordered" id="myTable">
+    <table class="table table-bordered " id="myTable">
       <thead style="text-align: center;">
         <tr>
           <th colspan="" class="estilo-tabla estilo-grupo"></th>
@@ -32,7 +32,6 @@
           <th colspan="" class="estilo-tabla estilo-grupo"></th>
         </tr>
 
-
         <tr>
           <th scope="col" class="estilo-tabla">Codigo</th>
           <th scope="col" class="estilo-tabla">Nombre</th>
@@ -40,7 +39,7 @@
 
           <th scope="col" class="estilo-tabla">Formación Academica</th>
 
-          <th scope="col" class="estilo-tabla">Cantidad de Cursos Realizados</th>
+         <th scope="col" class="estilo-tabla">Cantidad de Cursos Realizados</th>
 
           <th scope="col" class="estilo-tabla">Costos</th>
           <th scope="col" class="estilo-tabla">Marketing</th>
@@ -79,59 +78,59 @@
           <th scope="col" class="estilo-tabla">Editar</th>
         </tr>
       </thead>
-
       <tbody>
-        <tr *ngFor="let componente of componentes">
-          <th scope="row" class="estilo-tabla">{{componente.codigo}}</th>
-          <th class="estilo-tabla">{{componente.solicitante}}</th>
-          <th class="estilo-tabla">{{componente.actividadPrincipal}}</th>
+          <tr *ngFor="let componente of componentes">
+              <th scope="row" class="estilo-tabla">{{componente.codigo}}</th>
+              <th class="estilo-tabla">{{componente.solicitante}}</th>
+              <th class="estilo-tabla">{{componente.actividadPrincipal}}</th>
 
-          <td class="estilo-tabla">{{componente. formacionAcademica}}</td>
-
-          <td class="estilo-tabla">{{componente.cantidadCursosRealizados}}</td>
-
-          <td class="estilo-tabla">{{componente.costos}}</td>
-          <td class="estilo-tabla">{{componente.marketing}}</td>
-          <td class="estilo-tabla">{{componente.administracion}}</td>
-          <td class="estilo-tabla">{{componente.planNegocios}}</td>
-
-          <td class="estilo-tabla">{{componente.certificados}}</td>
-
-          <td class="estilo-tabla">{{componente.excel}}</td>
-          <td class="estilo-tabla">{{componente.word}}</td>
-          <td class="estilo-tabla">{{componente.powerPoint}}</td>
-          <td class="estilo-tabla">{{componente.otros }}</td>
-
-          <td class="estilo-tabla">{{componente.serigrafia}}</td>
-          <td class="estilo-tabla">{{componente.patronaje}}</td>
-          <td class="estilo-tabla">{{componente.bordado}}</td>
-          <td class="estilo-tabla">{{componente.acabadoMuebles}}</td>
-
-          <td class="estilo-tabla">{{componente.inocuidadAlimenticia}}</td>
-          <td class="estilo-tabla">{{componente.seguridadIndustrial}}</td>
-          <td class="estilo-tabla">{{componente.saludOcupacional}}</td>
-
-          <td class="estilo-tabla">{{componente.SolicitudCursos }}</td>
-
-          <td class="estilo-tabla">{{componente.fundaempresa}}</td>
-          <td class="estilo-tabla">{{componente.nit}}</td>
-          <td class="estilo-tabla">{{componente.licenciaAlcaldia}}</td>
-          <td class="estilo-tabla">{{componente.senasag}}</td>
-          <td class="estilo-tabla">{{componente.senapi}}</td>
-          <td class="estilo-tabla">{{componente.ministerioTrabajo}}</td>
-          <td class="estilo-tabla">{{componente.personeriaJuridica}}</td>
-
-          <td class="estilo-tabla">{{componente.fechaRealizada | date:'M/d/yy' }}</td>
-          <td class="estilo-tabla">{{componente.municipio}}</td>
-          <td class="estilo-tabla">{{componente.nombreEmpresa}}</td>
-          <td class="estilo-tabla">
-            <button class="btn btn-secondary" (click)="editar(componente.id)">editar</button>
-          </td>
-        </tr>
+              <td class="estilo-tabla">{{componente.formacionAcademica}}</td>
+    
+             <td class="estilo-tabla">{{componente.cantidadCursosRealizados}}</td>
+    
+              <td class="estilo-tabla">{{componente.costos}}</td>
+              <td class="estilo-tabla">{{componente.marketing}}</td>
+              <td class="estilo-tabla">{{componente.administracion}}</td>
+              <td class="estilo-tabla">{{componente.planNegocios}}</td>
+    
+              <td class="estilo-tabla">{{componente.certificados}}</td>
+    
+              <td class="estilo-tabla">{{componente.excel}}</td>
+              <td class="estilo-tabla">{{componente.word}}</td>
+              <td class="estilo-tabla">{{componente.powerPoint}}</td>
+              <td class="estilo-tabla">{{componente.otros }}</td>
+    
+              <td class="estilo-tabla">{{componente.serigrafia}}</td>
+              <td class="estilo-tabla">{{componente.patronaje}}</td>
+              <td class="estilo-tabla">{{componente.bordado}}</td>
+              <td class="estilo-tabla">{{componente.acabadoMuebles}}</td>
+    
+              <td class="estilo-tabla">{{componente.inocuidadAlimenticia}}</td>
+              <td class="estilo-tabla">{{componente.seguridadIndustrial}}</td>
+              <td class="estilo-tabla">{{componente.saludOcupacional}}</td>
+    
+              <td class="estilo-tabla">{{componente.SolicitudCursos }}</td>
+    
+              <td class="estilo-tabla">{{componente.fundaempresa}}</td>
+              <td class="estilo-tabla">{{componente.nit}}</td>
+              <td class="estilo-tabla">{{componente.licenciaAlcaldia}}</td>
+              <td class="estilo-tabla">{{componente.senasag}}</td>
+              <td class="estilo-tabla">{{componente.senapi}}</td>
+              <td class="estilo-tabla">{{componente.ministerioTrabajo}}</td>
+              <td class="estilo-tabla">{{componente.personeriaJuridica}}</td>
+    
+              <td class="estilo-tabla">{{componente.fechaRealizada | date:'M/d/yy' }}</td>
+              <td class="estilo-tabla">{{componente.municipio}}</td>
+              <td class="estilo-tabla">{{componente.nombreEmpresa}}</td>
+              <td class="estilo-tabla">
+                <button class="btn btn-secondary" (click)="editar(componente.id)">editar</button>
+              </td>
+            </tr>
       </tbody>
     </table>
   </div>
   <div style="margin-top: 2%; margin-bottom: 3%; ">
-    <a href="#" id="componente" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>
+    <a href="#" id="test" (click)="fnExcelReport()" class="btn-descarga">Descargar</a>
+   
   </div>
 </div>

@@ -29,6 +29,6 @@ h2{
 
 .scroll{
 	overflow:scroll;
-	height:auto;
+	height:600px;
 	width:auto;
 }

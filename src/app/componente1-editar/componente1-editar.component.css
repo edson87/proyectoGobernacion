@@ -1,4 +1,4 @@
-.datepicker-container{
+/*.datepicker-container{
     position: absolute;
     width: 200px;
     background: #fff;
@@ -8,4 +8,20 @@
     border: 1px solid #dfe3e9;
     border-radius: 4px;
     z-index: 999;
+}
+
+.ngx-datepicker-calendar-container{
+    z-index: 999;
+}*/
+
+.ngx-datepicker-calendar-container{
+    /*position: absolute;*/
+    width: 300px;
+    background: #fff;
+    top: 40px;
+    left: 0;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.08);
+    border: 1px solid #dfe3e9;
+    border-radius: 4px;
+    z-index: 99 !important;
 }
