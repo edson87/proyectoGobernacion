@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { Login } from '../../../model/login';
 import { Ficha } from '../../../model/ficha';
 import { Componente } from '../../../model/componente';
-import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { Headers, RequestOptions } from '@angular/http';
 import { HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Rx'; 
+import "rxjs/add/operator/map";
 
 @Injectable()
 export class ServiceService {
@@ -44,7 +46,7 @@ export class ServiceService {
   }
 
   public searchByCI(id:string){
-    return this.http.get(`http://ciadep.org:3000/searchByCI/${id}`);
+    return this.http.get(`http://ciadep.org:3000/searchByCI/${id}`)
   }
 
   public searchAllResources(id:string){

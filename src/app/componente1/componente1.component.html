@@ -9,6 +9,7 @@
           <th scope="col" class="estilo-tabla estilo-grupo">Codigo</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Nombre</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Rubro</th>
+          <th scope="col" class="estilo-tabla estilo-grupo">Gestion</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Ferias Productivas</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Monto</th>
           <th scope="col" class="estilo-tabla estilo-grupo">Venta Consolidada</th>
@@ -25,9 +26,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let componente of componentes">
-          <th scope="row" class="estilo-tabla">{{componente.codigo}}</th>
-          <th class="estilo-tabla">{{componente.solicitante}}</th>
-          <th class="estilo-tabla">{{componente.actividadPrincipal}}</th>
+          <td scope="row" class="estilo-tabla">{{componente.codigo}}</td>
+          <td class="estilo-tabla">{{componente.solicitante}}</td>
+          <td class="estilo-tabla">{{componente.actividadPrincipal}}</td>
+          <td class="estilo-tabla">{{componente.gestion | date:'M/d/yy'}}</td>
           <td class="estilo-tabla">{{componente.ferias}}</td>
           <td class="estilo-tabla">{{componente.montoFeria}}</td>
           <td class="estilo-tabla">{{componente.ventaConsolidada}}</td>

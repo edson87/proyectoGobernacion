@@ -1,6 +1,7 @@
 export class Componente{
     codigo?:string;
     solicitante?:string;
+    gestion?:Date;
     actividadPrincipal?:string;
     componente1?:string;
     ferias?:string;

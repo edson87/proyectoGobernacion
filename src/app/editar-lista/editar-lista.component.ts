@@ -108,12 +108,18 @@ export class EditarListaComponent implements OnInit {
      let capacitacion = this.ficha.capacitacionAsistenciaTecnica
 
      this.componente = {
-      codigo: this.ficha.codigo, solicitante: this.ficha.solicitante, actividadPrincipal: this.ficha.actividadPrincipal,
-      municipio: this.ficha.municipio, nombreEmpresa: this.ficha.nombreEmpresa,
+      codigo: this.ficha.codigo, 
+      solicitante: this.ficha.solicitante, 
+      gestion:this.ficha.fechaInscripcion,
+      actividadPrincipal: this.ficha.actividadPrincipal,
+      municipio: this.ficha.municipio, 
+      nombreEmpresa: this.ficha.nombreEmpresa,
       componente1: this.ficha.aperturaMercado,
       componente2: apollo,
       componente3: capacitacion,
-      licenciaAlcaldia: this.ficha.licenciaAlcaldia, fundaempresa: this.ficha.fundaempresa, nit: this.ficha.nit,
+      licenciaAlcaldia: this.ficha.licenciaAlcaldia, 
+      fundaempresa: this.ficha.fundaempresa, 
+      nit: this.ficha.nit,
       senasag: this.ficha.senasag,senapi: this.ficha.senapi} 
   
 

@@ -10,6 +10,8 @@
           <th colspan="" class="estilo-tabla estilo-grupo"></th>
           <th colspan="" class="estilo-tabla estilo-grupo"></th>
 
+          <th colspan="" class="estilo-tabla estilo-grupo"></th>          
+
           <th colspan="" class="estilo-tabla estilo-grupo"></th>
           <th colspan="" class="estilo-tabla estilo-grupo"></th>
           <th colspan="4" class="estilo-tabla estilo-grupo">Gestion Empresarial</th>
@@ -36,6 +38,8 @@
           <th scope="col" class="estilo-tabla">Codigo</th>
           <th scope="col" class="estilo-tabla">Nombre</th>
           <th scope="col" class="estilo-tabla">Rubro</th>
+
+          <th scope="col" class="estilo-tabla">Gestion</th>                    
 
           <th scope="col" class="estilo-tabla">Formación Academica</th>
 
@@ -80,9 +84,11 @@
       </thead>
       <tbody>
           <tr *ngFor="let componente of componentes">
-              <th scope="row" class="estilo-tabla">{{componente.codigo}}</th>
-              <th class="estilo-tabla">{{componente.solicitante}}</th>
-              <th class="estilo-tabla">{{componente.actividadPrincipal}}</th>
+              <td scope="row" class="estilo-tabla">{{componente.codigo}}</td>
+              <td class="estilo-tabla">{{componente.solicitante}}</td>
+              <td class="estilo-tabla">{{componente.actividadPrincipal}}</td>
+
+              <td class="estilo-tabla">{{componente.gestion | date:'M/d/yy'}}</td>          
 
               <td class="estilo-tabla">{{componente.formacionAcademica}}</td>
     
